@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .product-card:hover .product-overlay { opacity: 1; }
-        .hero-gradient { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; }
+        .hero-gradient { 
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000'); 
+            background-size: cover; 
+            background-position: center; 
+        }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
@@ -16,12 +20,12 @@
     <!-- Navigation -->
     <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateHome()">
                 <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center font-bold text-xl italic">C</div>
                 <span class="text-2xl font-bold tracking-tight">CHENMA <span class="text-blue-500 italic">LIFTING</span></span>
             </div>
             <div class="hidden md:flex space-x-8 font-medium uppercase text-sm tracking-widest">
-                <a href="#" class="hover:text-blue-400 transition">Home</a>
+                <a href="#" onclick="navigateHome(); return false;" class="hover:text-blue-400 transition">Home</a>
                 <a href="#products" class="hover:text-blue-400 transition">Products</a>
                 <a href="mailto:chenmagongsi@163.com" class="hover:text-blue-400 transition">Contact</a>
                 <a href="mailto:chenmagongsi@163.com" class="bg-blue-600 px-4 py-2 rounded text-white hover:bg-blue-700 transition">Get Quote</a>
@@ -29,7 +33,155 @@
         </div>
     </nav>
 
-    <!-- ... (Hero and Features remain same) ... -->
+    <!-- Main Homepage View (Shown by default) -->
+    <div id="homepage-view">
+        <!-- Hero Section -->
+        <header class="hero-gradient h-[450px] flex items-center text-white relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                        Professional <br> 
+                        <span class="text-blue-500">Material Handling</span> <br>
+                        Solutions
+                    </h1>
+                    <p class="text-xl text-slate-300 mb-8 max-w-xl">
+                        Leading supplier of electric winches, lift tables, and stair climbers. High-quality engineering tailored for global B2B industrial requirements.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#products" class="bg-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition shadow-lg flex items-center">
+                            View Products <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Features Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">CE Certified</h3>
+                    <p class="text-slate-500">All equipment meets strict safety and quality standards for global export.</p>
+                </div>
+                <div>
+                    <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">OEM/ODM Support</h3>
+                    <p class="text-slate-500">Customized solutions for your specific warehouse and site requirements.</p>
+                </div>
+                <div>
+                    <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">Global Shipping</h3>
+                    <p class="text-slate-500">Fast and reliable logistics to over 50 countries worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section id="products" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter">Stair Climbers Catalog</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                
+                <!-- Search Bar -->
+                <div class="max-w-xl mx-auto mb-12 relative">
+                    <input type="text" id="searchInput" placeholder="Search lifting products (e.g. Electric, Foldable...)" 
+                        class="w-full px-6 py-4 rounded-full border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <i class="fas fa-search absolute right-6 top-5 text-slate-400"></i>
+                </div>
+            </div>
+
+            <div id="product-grid" class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Products will be injected here via JS -->
+                <div class="col-span-full py-12 text-slate-400">Loading Stair Climbers...</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Second-Layer: Product Detail View (Hidden by default, triggered by hash) -->
+    <div id="detail-view" class="container mx-auto px-6 py-12 hidden">
+        <!-- Back Button -->
+        <button onclick="navigateHome()" class="mb-8 flex items-center text-blue-600 hover:text-blue-800 font-bold transition text-lg">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Catalog
+        </button>
+
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col lg:flex-row">
+            <!-- Left Side: Main Image & Video Player -->
+            <div class="lg:w-1/2 p-8 bg-slate-100 flex flex-col justify-center">
+                <!-- Large Product Image -->
+                <div class="flex justify-center mb-8">
+                    <img id="detailImage" src="" alt="Product" class="max-h-[400px] object-contain rounded-lg shadow-md">
+                </div>
+                
+                <!-- Video Section -->
+                <div class="border-t pt-8 mt-4">
+                    <h4 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-wider"><i class="fas fa-video text-blue-600 mr-2"></i> Product Video Demo</h4>
+                    <div class="relative overflow-hidden rounded-lg shadow-inner bg-slate-900 aspect-video flex items-center justify-center">
+                        <!-- Standard embedded video player -->
+                        <video id="detailVideo" class="w-full h-full object-cover" controls muted autoplay loop>
+                            <source id="videoSource" src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2 text-center">Note: Dedicated video for this model loaded successfully.</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Product Details & Specifications -->
+            <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">Chenma Material Handling</span>
+                    <h1 id="detailTitle" class="text-3xl font-extrabold text-slate-800 mb-6 leading-tight">Product Title</h1>
+                    
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 border-b pb-2 uppercase tracking-wide">Specifications</h3>
+                    <!-- Dynamic Spec Table -->
+                    <table class="w-full text-sm text-left text-slate-500 mb-8">
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="py-3 font-bold text-slate-700 w-1/3">Load Capacity</td>
+                                <td id="specCapacity" class="py-3">300 kg</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-3 font-bold text-slate-700">Power Source</td>
+                                <td id="specPower" class="py-3">Lithium Battery (48V / 1000W)</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-3 font-bold text-slate-700">Material</td>
+                                <td class="py-3">Heavy Duty Steel / Aluminum</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-3 font-bold text-slate-700">Structure</td>
+                                <td id="specStructure" class="py-3">Foldable / Lightweight</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 font-bold text-slate-700">Certification</td>
+                                <td class="py-3">CE Certified / ISO 9001</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded mb-8">
+                        <p class="text-sm text-blue-800 font-medium">
+                            <i class="fas fa-info-circle mr-2"></i> Custom specifications, colors, and accessories are supported upon request.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action / Inquiry Box -->
+                <div class="bg-slate-900 text-white p-6 rounded-lg shadow-md">
+                    <h4 class="text-md font-bold mb-4 uppercase tracking-widest text-center text-blue-400">Request a Quote</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <a id="detailWhatsApp" href="" target="_blank" class="bg-green-500 text-white py-4 rounded-md font-bold hover:bg-green-600 transition flex items-center justify-center shadow-lg">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp Quote
+                        </a>
+                        <a id="detailEmail" href="" class="bg-blue-600 text-white py-4 rounded-md font-bold hover:bg-blue-700 transition flex items-center justify-center text-center shadow-lg">
+                            <i class="fas fa-envelope mr-2"></i> Email Catalog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/8615991627891" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all z-[100] group">
@@ -56,9 +208,7 @@
                 <div>
                     <h4 class="text-lg font-bold mb-6 uppercase tracking-widest border-b border-slate-700 pb-2 inline-block">Follow Us</h4>
                     <div class="flex space-x-6 text-2xl text-slate-400">
-                        <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="https://xachenma.en.alibaba.com" target="_blank" class="hover:text-blue-500 transition"><i class="fab fa-alipay"></i> Store</a>
                     </div>
                 </div>
             </div>
@@ -68,10 +218,10 @@
         </div>
     </footer>
 
-
     <!-- Data Injection Script -->
     <script>
         let allProducts = [];
+        const defaultVideo = "https://assets.mixkit.co/videos/preview/mixkit-forklift-moving-boxes-in-a-warehouse-34327-large.mp4";
 
         async function loadProducts() {
             try {
@@ -85,9 +235,14 @@
                     const filtered = allProducts.filter(p => p.title.toLowerCase().includes(term));
                     renderProducts(filtered);
                 });
+
+                // Listen to hash changes (for 2nd-layer routing)
+                window.addEventListener('hashchange', handleRouting);
+                handleRouting(); // Call once on load
+
             } catch (error) {
                 console.error('Error loading products:', error);
-                document.getElementById('product-grid').innerHTML = '<div class="col-span-full text-red-500">Failed to load product data.</div>';
+                document.getElementById('product-grid').innerHTML = '<div class="col-span-full text-red-500">Failed to load product data. Please ensure all_products.json is correct.</div>';
             }
         }
 
@@ -98,26 +253,110 @@
                 return;
             }
             grid.innerHTML = '';
-            products.forEach(product => {
+            products.forEach((product, index) => {
                 const card = document.createElement('div');
-                card.className = 'product-card bg-white rounded-lg shadow-sm hover:shadow-2xl transition duration-500 overflow-hidden flex flex-col group';
+                card.className = 'product-card bg-white rounded-lg shadow-sm hover:shadow-2xl transition duration-500 overflow-hidden flex flex-col group cursor-pointer';
+                card.onclick = () => {
+                    window.location.hash = `#/product/${index}`;
+                };
                 card.innerHTML = `
                     <div class="h-64 overflow-hidden relative">
                         <img src="${product.imageUrl}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/400x400?text=Product+Image'">
                         <div class="product-overlay absolute inset-0 bg-blue-900 bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-                            <a href="${product.detailUrl}" target="_blank" class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">View Details</a>
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">View Details</span>
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-sm mb-4 line-clamp-2 h-10 uppercase tracking-tight text-slate-700">${product.title}</h4>
+                        <h4 class="font-bold text-sm mb-4 line-clamp-2 h-10 uppercase tracking-tight text-slate-700" title="${product.title}">${product.title}</h4>
                         <div class="mt-auto flex justify-between items-center border-t pt-4">
                             <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Alibaba Verified</span>
-                            <a href="${product.detailUrl}" target="_blank" class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-external-link-alt"></i></a>
+                            <span class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-arrow-right"></i></span>
                         </div>
                     </div>
                 `;
                 grid.appendChild(card);
             });
+        }
+
+        // 2nd-Layer Router
+        function handleRouting() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#/product/')) {
+                const index = parseInt(hash.replace('#/product/', ''), 10);
+                if (!isNaN(index) && allProducts[index]) {
+                    showDetailPage(allProducts[index]);
+                    return;
+                }
+            }
+            showHomePage();
+        }
+
+        function showHomePage() {
+            document.getElementById('homepage-view').classList.remove('hidden');
+            document.getElementById('detail-view').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showDetailPage(product) {
+            document.getElementById('homepage-view').classList.add('hidden');
+            document.getElementById('detail-view').classList.remove('hidden');
+            window.scrollTo(0, 0);
+
+            // Set images and text
+            document.getElementById('detailImage').src = product.imageUrl;
+            document.getElementById('detailTitle').textContent = product.title;
+
+            // Load Custom Video if exists, otherwise fallback
+            const videoEl = document.getElementById('detailVideo');
+            const videoSrc = document.getElementById('videoSource');
+            const targetVideo = product.videoUrl ? product.videoUrl : defaultVideo;
+            
+            videoSrc.src = targetVideo;
+            videoEl.load(); // Reload the video element with the new source
+
+            // Generate specifications dynamically based on Title keywords
+            generateSpecs(product.title);
+
+            // Pre-filled B2B inquiries
+            const customMessage = encodeURIComponent(`Hi, I am interested in your product: "${product.title}". Please send me the price, MOQ, and video specifications to my country.`);
+            document.getElementById('detailWhatsApp').href = `https://wa.me/8615991627891?text=${customMessage}`;
+
+            const emailSubject = encodeURIComponent(`Inquiry for ${product.title}`);
+            const emailBody = encodeURIComponent(`Dear Sales,\n\nI visited your independent website and am interested in the model: "${product.title}".\n\nPlease send me detailed parameters and product videos.\n\nBest regards`);
+            document.getElementById('detailEmail').href = `mailto:chenmagongsi@163.com?subject=${emailSubject}&body=${emailBody}`;
+        }
+
+        // Spec Engine
+        function generateSpecs(title) {
+            const lowerTitle = title.toLowerCase();
+            
+            // 1. Load capacity auto-matching
+            let capacity = "300 kg";
+            if (lowerTitle.includes("400kg")) capacity = "400 kg";
+            else if (lowerTitle.includes("250kg")) capacity = "250 kg";
+            else if (lowerTitle.includes("150kg")) capacity = "150 kg";
+            else if (lowerTitle.includes("300kg")) capacity = "300 kg";
+            else if (lowerTitle.includes("600kg")) capacity = "600 kg";
+            document.getElementById('specCapacity').textContent = capacity;
+
+            // 2. Power source matching
+            let power = "Manual Operation";
+            if (lowerTitle.includes("electric")) {
+                power = "Lithium Battery (48V / 800W - 1000W)";
+                if (lowerTitle.includes("1000w")) power = "Lithium Battery (48V / 1000W)";
+            }
+            document.getElementById('specPower').textContent = power;
+
+            // 3. Structure matching
+            let structure = "Heavy Duty Steel, Rigid Frame";
+            if (lowerTitle.includes("foldable") || lowerTitle.includes("folding")) {
+                structure = "Foldable Aerospace Aluminum / Steel (Space-Saving)";
+            }
+            document.getElementById('specStructure').textContent = structure;
+        }
+
+        function navigateHome() {
+            window.location.hash = '';
         }
 
         window.onload = loadProducts;
