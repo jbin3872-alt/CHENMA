@@ -1,365 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chenma Lifting | Professional Material Handling Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .product-card:hover .product-overlay { opacity: 1; }
-        .hero-gradient { 
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000'); 
-            background-size: cover; 
-            background-position: center; 
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xi'an Chen Ma Materials Co.,Ltd. | Official Catalog</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+.card:hover .ov{opacity:1}
+.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000');background-size:cover;background-position:center}
+.on{background:#2563eb!important;color:#fff!important}
+</style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-900">
+<body class="bg-slate-100 font-sans">
 
-    <!-- Navigation -->
-    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateHome()">
-                <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center font-bold text-xl italic">C</div>
-                <span class="text-2xl font-bold tracking-tight">CHENMA <span class="text-blue-500 italic">LIFTING</span></span>
-            </div>
-            <div class="hidden md:flex space-x-8 font-medium uppercase text-sm tracking-widest">
-                <a href="#" onclick="navigateHome(); return false;" class="hover:text-blue-400 transition">Home</a>
-                <a href="#products" class="hover:text-blue-400 transition">Products</a>
-                <a href="mailto:chenmagongsi@163.com" class="hover:text-blue-400 transition">Contact</a>
-                <a href="mailto:chenmagongsi@163.com" class="bg-blue-600 px-4 py-2 rounded text-white hover:bg-blue-700 transition">Get Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Homepage View (Shown by default) -->
-    <div id="homepage-view">
-        <!-- Hero Section -->
-        <header class="hero-gradient h-[450px] flex items-center text-white relative overflow-hidden">
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="max-w-3xl">
-                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                        Professional <br> 
-                        <span class="text-blue-500">Material Handling</span> <br>
-                        Solutions
-                    </h1>
-                    <p class="text-xl text-slate-300 mb-8 max-w-xl">
-                        Leading supplier of electric winches, lift tables, and stair climbers. High-quality engineering tailored for global B2B industrial requirements.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#products" class="bg-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-700 transition shadow-lg flex items-center">
-                            View Products <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Features Section -->
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                <div>
-                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">CE Certified</h3>
-                    <p class="text-slate-500">All equipment meets strict safety and quality standards for global export.</p>
-                </div>
-                <div>
-                    <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">OEM/ODM Support</h3>
-                    <p class="text-slate-500">Customized solutions for your specific warehouse and site requirements.</p>
-                </div>
-                <div>
-                    <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">Global Shipping</h3>
-                    <p class="text-slate-500">Fast and reliable logistics to over 50 countries worldwide.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Grid Section -->
-        <section id="products" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6 text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter">Stair Climbers Catalog</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-                
-                <!-- Search Bar -->
-                <div class="max-w-xl mx-auto mb-12 relative">
-                    <input type="text" id="searchInput" placeholder="Search lifting products (e.g. Electric, Foldable...)" 
-                        class="w-full px-6 py-4 rounded-full border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <i class="fas fa-search absolute right-6 top-5 text-slate-400"></i>
-                </div>
-            </div>
-
-            <div id="product-grid" class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Products will be injected here via JS -->
-                <div class="col-span-full py-12 text-slate-400">Loading Stair Climbers...</div>
-            </div>
-        </section>
+<nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3 cursor-pointer" onclick="goHome()">
+      <img src="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg" class="h-10 bg-white p-1 rounded" alt="Logo">
+      <span class="text-xl font-black uppercase">CHENMA <span class="text-blue-400">LIFTING</span></span>
     </div>
-
-    <!-- Second-Layer: Product Detail View (Hidden by default, triggered by hash) -->
-    <div id="detail-view" class="container mx-auto px-6 py-12 hidden">
-        <!-- Back Button -->
-        <button onclick="navigateHome()" class="mb-8 flex items-center text-blue-600 hover:text-blue-800 font-bold transition text-lg">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Catalog
+    <div class="flex items-center space-x-4">
+      <div class="hidden md:flex space-x-6 text-xs font-bold uppercase tracking-widest">
+        <a href="#" onclick="goHome();return false" class="hover:text-blue-400">Home</a>
+        <a href="#about" onclick="goHome()" class="hover:text-blue-400">About Us</a>
+        <a href="#products" onclick="goHome()" class="hover:text-blue-400">Catalog</a>
+        <a href="#applications" onclick="goHome()" class="hover:text-blue-400">Applications</a>
+        <a href="#usage" onclick="goHome()" class="hover:text-blue-400">Usage Guide</a>
+      </div>
+      </div>
+      <div class="relative group">
+        <button class="bg-slate-800 px-3 py-1 rounded text-sm flex items-center space-x-1 border border-slate-700">
+          <i class="fas fa-globe text-blue-400"></i><span id="ll" class="ml-1">EN</span>
         </button>
-
-        <div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col lg:flex-row">
-            <!-- Left Side: Main Image & Video Player -->
-            <div class="lg:w-1/2 p-8 bg-slate-100 flex flex-col justify-center">
-                <!-- Large Product Image -->
-                <div class="flex justify-center mb-8">
-                    <img id="detailImage" src="" alt="Product" class="max-h-[400px] object-contain rounded-lg shadow-md">
-                </div>
-                
-                <!-- Video Section -->
-                <div class="border-t pt-8 mt-4">
-                    <h4 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-wider"><i class="fas fa-video text-blue-600 mr-2"></i> Product Video Demo</h4>
-                    <div class="relative overflow-hidden rounded-lg shadow-inner bg-slate-900 aspect-video flex items-center justify-center">
-                        <!-- Standard embedded video player -->
-                        <video id="detailVideo" class="w-full h-full object-cover" controls muted autoplay loop>
-                            <source id="videoSource" src="" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <p class="text-xs text-slate-400 mt-2 text-center">Note: Dedicated video for this model loaded successfully.</p>
-                </div>
-            </div>
-
-            <!-- Right Side: Product Details & Specifications -->
-            <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">Chenma Material Handling</span>
-                    <h1 id="detailTitle" class="text-3xl font-extrabold text-slate-800 mb-6 leading-tight">Product Title</h1>
-                    
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 border-b pb-2 uppercase tracking-wide">Specifications</h3>
-                    <!-- Dynamic Spec Table -->
-                    <table class="w-full text-sm text-left text-slate-500 mb-8">
-                        <tbody>
-                            <tr class="border-b">
-                                <td class="py-3 font-bold text-slate-700 w-1/3">Load Capacity</td>
-                                <td id="specCapacity" class="py-3">300 kg</td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="py-3 font-bold text-slate-700">Power Source</td>
-                                <td id="specPower" class="py-3">Lithium Battery (48V / 1000W)</td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="py-3 font-bold text-slate-700">Material</td>
-                                <td class="py-3">Heavy Duty Steel / Aluminum</td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="py-3 font-bold text-slate-700">Structure</td>
-                                <td id="specStructure" class="py-3">Foldable / Lightweight</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 font-bold text-slate-700">Certification</td>
-                                <td class="py-3">CE Certified / ISO 9001</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded mb-8">
-                        <p class="text-sm text-blue-800 font-medium">
-                            <i class="fas fa-info-circle mr-2"></i> Custom specifications, colors, and accessories are supported upon request.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Action / Inquiry Box -->
-                <div class="bg-slate-900 text-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-md font-bold mb-4 uppercase tracking-widest text-center text-blue-400">Request a Quote</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <a id="detailWhatsApp" href="" target="_blank" class="bg-green-500 text-white py-4 rounded-md font-bold hover:bg-green-600 transition flex items-center justify-center shadow-lg">
-                            <i class="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp Quote
-                        </a>
-                        <a id="detailEmail" href="" class="bg-blue-600 text-white py-4 rounded-md font-bold hover:bg-blue-700 transition flex items-center justify-center text-center shadow-lg">
-                            <i class="fas fa-envelope mr-2"></i> Email Catalog
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="absolute right-0 mt-1 w-32 bg-white text-slate-900 shadow-2xl rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 text-sm">
+          <a href="javascript:setLang('en')" class="block px-4 py-2 hover:bg-blue-50 font-bold">English</a>
+          <a href="javascript:setLang('es')" class="block px-4 py-2 hover:bg-blue-50">Español</a>
+          <a href="javascript:setLang('ru')" class="block px-4 py-2 hover:bg-blue-50">Русский</a>
+          <a href="javascript:setLang('ar')" class="block px-4 py-2 hover:bg-blue-50">العربية</a>
+          <a href="javascript:setLang('fr')" class="block px-4 py-2 hover:bg-blue-50">Français</a>
+          <a href="javascript:setLang('de')" class="block px-4 py-2 hover:bg-blue-50">Deutsch</a>
         </div>
+      </div>
+      <a href="mailto:chenmagongsi@163.com" class="bg-blue-600 px-4 py-2 rounded text-xs font-black uppercase hover:bg-blue-700">Get Quote</a>
     </div>
+  </div>
+</nav>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/8615991627891" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all z-[100] group">
-        <i class="fab fa-whatsapp text-3xl"></i>
-        <span class="absolute right-20 bg-white text-slate-900 px-4 py-2 rounded shadow-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chat on WhatsApp</span>
-    </a>
+<div id="home-view">
+  <div class="hero h-72 flex items-center text-white text-center">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-tighter">CHENMA LIFTING</h1>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-6">Professional CE-certified material handling solutions since 2011 · Xi'an, China</p>
+      <a href="#products" class="inline-block bg-blue-600 hover:bg-blue-700 px-10 py-3 rounded font-black transition">View All Products</a>
+    </div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <div>
-                    <span class="text-2xl font-bold tracking-tight">CHENMA <span class="text-blue-500">LIFTING</span></span>
-                    <p class="text-slate-500 mt-4 leading-relaxed">Xi'an Chenma Materials Co., Ltd. provides professional material handling and lifting solutions globally.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 uppercase tracking-widest border-b border-slate-700 pb-2 inline-block">Contact Info</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li class="flex items-center"><i class="fas fa-envelope text-blue-500 mr-3"></i> <a href="mailto:chenmagongsi@163.com" class="hover:text-white transition">chenmagongsi@163.com</a></li>
-                        <li class="flex items-center"><i class="fas fa-phone text-blue-500 mr-3"></i> +86-15991627891</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-blue-500 mr-3"></i> Xi'an, China</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 uppercase tracking-widest border-b border-slate-700 pb-2 inline-block">Follow Us</h4>
-                    <div class="flex space-x-6 text-2xl text-slate-400">
-                        <a href="https://xachenma.en.alibaba.com" target="_blank" class="hover:text-blue-500 transition"><i class="fab fa-alipay"></i> Store</a>
-                    </div>
-                </div>
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-black uppercase tracking-tighter mb-6">About Xi'an Chenma</h2>
+          <div class="w-20 h-1.5 bg-blue-600 mb-6 rounded"></div>
+          <p class="text-slate-600 mb-4 leading-relaxed"><strong>Xi'an Chenma Materials Co., Ltd.</strong> has been a leading provider of professional material handling solutions since 2011. Strategically located in Xi’an—a key logistics hub in Northwest China—we specialize in the design, sales, and service of a wide range of equipment including industrial trolleys, electric forklifts, intelligent stair climbers, and lifting platforms.</p>
+          <p class="text-slate-600 mb-4 leading-relaxed">Our products are <strong>CE-certified</strong> and exported to over <strong>50 countries</strong> including North America, Europe, and the Middle East. We offer flexible cooperation models such as <strong>ODM and OEM</strong>, providing end-to-end support from custom development to global shipment.</p>
+          <div class="grid grid-cols-3 gap-4 mt-8">
+            <div class="border-l-4 border-blue-600 pl-4">
+              <span class="block text-xl font-black text-slate-900">15+</span>
+              <span class="text-[10px] text-slate-500 uppercase font-bold">Years Exp.</span>
             </div>
-            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-                <p>© 2026 Xi'an Chenma Materials Co., Ltd. All rights reserved.</p>
+            <div class="border-l-4 border-blue-600 pl-4">
+              <span class="block text-xl font-black text-slate-900">50+</span>
+              <span class="text-[10px] text-slate-500 uppercase font-bold">Countries</span>
             </div>
+            <div class="border-l-4 border-blue-600 pl-4">
+              <span class="block text-xl font-black text-slate-900">OEM</span>
+              <span class="text-[10px] text-slate-500 uppercase font-bold">Supported</span>
+            </div>
+          </div>
         </div>
-    </footer>
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" class="rounded-3xl shadow-2xl" alt="Factory Image">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Data Injection Script -->
-    <script>
-        let allProducts = [];
-        const defaultVideo = "https://assets.mixkit.co/videos/preview/mixkit-forklift-moving-boxes-in-a-warehouse-34327-large.mp4";
+  <section id="products" class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-black uppercase tracking-tighter mb-2">Official Product Catalog</h2>
+        <p class="text-slate-500 text-sm">Real products from official PDF manuals · 4 categories · 36 models</p>
+        <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-4 rounded"></div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        <button id="t-all" onclick="show('all')" class="cat-btn on px-6 py-2 rounded-full font-bold border border-slate-300 transition">ALL (36)</button>
+        <button id="t-SC" onclick="show('SC')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Stair Climbers (7)</button>
+        <button id="t-FE" onclick="show('FE')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Full Electric Forklifts (8)</button>
+        <button id="t-SE" onclick="show('SE')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Semi Electric Forklifts (7)</button>
+        <button id="t-LM" onclick="show('LM')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Lift Machines (14)</button>
+      </div>
+      <div id="grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+    </div>
+  </section>
 
-        async function loadProducts() {
-            try {
-                const response = await fetch('./all_products.json');
-                allProducts = await response.json();
-                renderProducts(allProducts);
+  <section id="applications" class="py-16 bg-slate-900 text-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">Product Applications</h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto">Discover how Chen Ma Lifting solutions solve real-world handling challenges across diverse industries.</p>
+        <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-4 rounded"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition group">
+          <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
+            <i class="fas fa-warehouse text-blue-400 group-hover:text-white"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">Logistics</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Our electric forklifts and stackers are designed for high-efficiency cargo movement in modern warehouses and narrow-aisle storage.</p>
+        </div>
 
-                // Add Search functionality
-                document.getElementById('searchInput').addEventListener('input', (e) => {
-                    const term = e.target.value.toLowerCase();
-                    const filtered = allProducts.filter(p => p.title.toLowerCase().includes(term));
-                    renderProducts(filtered);
-                });
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition group">
+          <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
+            <i class="fas fa-hammer text-blue-400 group-hover:text-white"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">Construction</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Heavy-duty stair climbers and gantry lifts transport bricks, cement, and construction materials safely to upper floors.</p>
+        </div>
 
-                // Listen to hash changes (for 2nd-layer routing)
-                window.addEventListener('hashchange', handleRouting);
-                handleRouting(); // Call once on load
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition group">
+          <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
+            <i class="fas fa-home text-blue-400 group-hover:text-white"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">Home & Retail</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Compact and portable climbing tools for moving household appliances, bottled water, and retail inventory effortlessly.</p>
+        </div>
 
-            } catch (error) {
-                console.error('Error loading products:', error);
-                document.getElementById('product-grid').innerHTML = '<div class="col-span-full text-red-500">Failed to load product data. Please ensure all_products.json is correct.</div>';
-            }
-        }
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-blue-500 transition group">
+          <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
+            <i class="fas fa-hard-hat text-blue-400 group-hover:text-white"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 uppercase tracking-tight">Aerial Work</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Aluminum pillar lifts and scissor platforms provide stable support for high-altitude installation, maintenance, and cleaning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        function renderProducts(products) {
-            const grid = document.getElementById('product-grid');
-            if (products.length === 0) {
-                grid.innerHTML = '<div class="col-span-full py-12 text-slate-400">No products found matching your search.</div>';
-                return;
-            }
-            grid.innerHTML = '';
-            products.forEach((product, index) => {
-                const card = document.createElement('div');
-                card.className = 'product-card bg-white rounded-lg shadow-sm hover:shadow-2xl transition duration-500 overflow-hidden flex flex-col group cursor-pointer';
-                card.onclick = () => {
-                    window.location.hash = `#/product/${index}`;
-                };
-                card.innerHTML = `
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="${product.imageUrl}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/400x400?text=Product+Image'">
-                        <div class="product-overlay absolute inset-0 bg-blue-900 bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-sm">View Details</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-sm mb-4 line-clamp-2 h-10 uppercase tracking-tight text-slate-700" title="${product.title}">${product.title}</h4>
-                        <div class="mt-auto flex justify-between items-center border-t pt-4">
-                            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Alibaba Verified</span>
-                            <span class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+  <section id="usage" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">Product Usage Guide</h2>
+        <p class="text-slate-500 text-sm">Follow these step-by-step instructions for optimal equipment performance and safety.</p>
+        <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-4 rounded"></div>
+      </div>
+      <div id="usage-grid" class="grid md:grid-cols-3 gap-8">
+        <!-- Usage units will be injected here -->
+      </div>
+    </div>
+  </section>
+</div>
 
-        // 2nd-Layer Router
-        function handleRouting() {
-            const hash = window.location.hash;
-            if (hash.startsWith('#/product/')) {
-                const index = parseInt(hash.replace('#/product/', ''), 10);
-                if (!isNaN(index) && allProducts[index]) {
-                    showDetailPage(allProducts[index]);
-                    return;
-                }
-            }
-            showHomePage();
-        }
+<div id="detail-view" class="hidden container mx-auto px-6 py-12">
+  <button onclick="goHome()" class="mb-8 text-blue-600 font-bold flex items-center hover:text-blue-800 transition">
+    <i class="fas fa-arrow-left mr-2"></i>Back to Catalog
+  </button>
+  <div class="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden border border-slate-100">
+    <div class="md:w-1/2 p-6 bg-slate-50 flex items-center justify-center min-h-80">
+      <img id="dImg" src="" class="max-h-96 object-contain w-full">
+    </div>
+    <div class="md:w-1/2 p-8 md:p-12">
+      <span id="dCat" class="text-xs font-black text-blue-600 uppercase tracking-widest block mb-2"></span>
+      <h1 id="dName" class="text-2xl md:text-4xl font-black mt-1 mb-6 uppercase leading-tight"></h1>
+      <div id="dSpecs" class="space-y-2 mb-8 max-h-96 overflow-y-auto pr-2"></div>
+      <div class="grid grid-cols-2 gap-4">
+        <a id="dWA" href="" target="_blank" class="bg-green-500 text-white py-4 rounded-xl font-black flex items-center justify-center hover:bg-green-600 transition">
+          <i class="fab fa-whatsapp mr-2 text-xl"></i>WhatsApp
+        </a>
+        <a id="dEM" href="" class="bg-blue-600 text-white py-4 rounded-xl font-black flex items-center justify-center hover:bg-blue-700 transition">
+          <i class="fas fa-envelope mr-2"></i>Email
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-        function showHomePage() {
-            document.getElementById('homepage-view').classList.remove('hidden');
-            document.getElementById('detail-view').classList.add('hidden');
-            window.scrollTo(0, 0);
-        }
+<div class="fixed bottom-8 right-8 z-50">
+  <a href="https://wa.me/8615991627891" target="_blank" class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+</div>
 
-        function showDetailPage(product) {
-            document.getElementById('homepage-view').classList.add('hidden');
-            document.getElementById('detail-view').classList.remove('hidden');
-            window.scrollTo(0, 0);
+<footer class="bg-slate-900 text-white py-12 mt-8">
+  <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <div>
+      <img src="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg" class="h-10 bg-white p-1 rounded mb-4">
+      <p class="text-slate-400">Xi'an Chen Ma Materials Co.,Ltd. Professional material handling solutions since 2011.</p>
+    </div>
+    <div>
+      <h4 class="font-black uppercase tracking-widest mb-4">Contact</h4>
+      <p class="text-slate-400 mb-2"><i class="fas fa-envelope text-blue-400 mr-2"></i>chenmagongsi@163.com</p>
+      <p class="text-slate-400 mb-2"><i class="fas fa-phone text-blue-400 mr-2"></i>+86-15991627891</p>
+      <p class="text-slate-400"><i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>Xi'an, Shaanxi, China</p>
+    </div>
+    <div>
+      <h4 class="font-black uppercase tracking-widest mb-4">Certificates</h4>
+      <div class="flex space-x-3">
+        <span class="px-4 py-2 bg-slate-800 rounded font-black text-blue-400 border border-slate-700">CE</span>
+        <span class="px-4 py-2 bg-slate-800 rounded font-black text-blue-400 border border-slate-700">ISO 9001</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-            // Set images and text
-            document.getElementById('detailImage').src = product.imageUrl;
-            document.getElementById('detailTitle').textContent = product.title;
+<script>
+const P = [
+  // ═══════════════════════════════════════════════════
+  // STAIR CLIMBERS — 爬楼机.pdf
+  // 爬楼机_01.png → LP800-1 / LP800-101 / LP800-102
+  // ═══════════════════════════════════════════════════
+  { id:1, cat:"SC", name:"LP800-1 Electric Stair Climber 400kg",
+    img:"https://sc02.alicdn.com/kf/Ab1c9f7237b25412ca342dd26ad6ec52cp.png",
+    specs:[["Max Load","400 kg"],["Dimensions","54×62×180 cm"],["Battery","48V / 72AH Lithium"],["Power","1200 W"],["Wheel Type","Silent wheels"],["Material","Manganese Steel"],["Work Time","6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Feature","Half-slope anti-skid function"]]},
 
-            // Load Custom Video if exists, otherwise fallback
-            const videoEl = document.getElementById('detailVideo');
-            const videoSrc = document.getElementById('videoSource');
-            const targetVideo = product.videoUrl ? product.videoUrl : defaultVideo;
-            
-            videoSrc.src = targetVideo;
-            videoEl.load(); // Reload the video element with the new source
+  { id:2, cat:"SC", name:"LP800-101 Electric Stair Climber 250kg",
+    img:"https://sc02.alicdn.com/kf/Ab1c9f7237b25412ca342dd26ad6ec52cp.png",
+    specs:[["Max Load","250 kg"],["Dimensions","54×62×180 cm"],["Battery","48V / 72AH Lithium"],["Power","800 W"],["Wheel Type","Silent wheels"],["Material","Manganese Steel"],["Work Time","6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Feature","Half-slope anti-skid function"]]},
 
-            // Generate specifications dynamically based on Title keywords
-            generateSpecs(product.title);
+  { id:3, cat:"SC", name:"LP800-102 Electric Stair Climber 150kg",
+    img:"https://sc02.alicdn.com/kf/Ab1c9f7237b25412ca342dd26ad6ec52cp.png",
+    specs:[["Max Load","150 kg"],["Dimensions","54×62×180 cm"],["Battery","48V / 72AH Lithium"],["Power","600 W"],["Wheel Type","Silent wheels"],["Material","Manganese Steel"],["Work Time","6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Feature","Half-slope anti-skid function"]]},
 
-            // Pre-filled B2B inquiries
-            const customMessage = encodeURIComponent(`Hi, I am interested in your product: "${product.title}". Please send me the price, MOQ, and video specifications to my country.`);
-            document.getElementById('detailWhatsApp').href = `https://wa.me/8615991627891?text=${customMessage}`;
+  // 爬楼机_02.png → LP800-2
+  { id:4, cat:"SC", name:"LP800-2 Stair Climber 400kg — Training Wheels",
+    img:"https://sc02.alicdn.com/kf/A298c48af79a042d293209ddf48553fcaz.png",
+    specs:[["Max Load","400 kg"],["Dimensions","54×62×180 cm"],["Battery","48V / 72AH Lithium"],["Power","1200 W"],["Wheel Type","Training wheels"],["Material","Manganese Steel"],["Work Time","6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Feature","Easy to turn transport"]]},
 
-            const emailSubject = encodeURIComponent(`Inquiry for ${product.title}`);
-            const emailBody = encodeURIComponent(`Dear Sales,\n\nI visited your independent website and am interested in the model: "${product.title}".\n\nPlease send me detailed parameters and product videos.\n\nBest regards`);
-            document.getElementById('detailEmail').href = `mailto:chenmagongsi@163.com?subject=${emailSubject}&body=${emailBody}`;
-        }
+  // 爬楼机_03.png → DP800-1
+  { id:5, cat:"SC", name:"DP800-1 All-Terrain Stair Climber 400kg",
+    img:"https://sc02.alicdn.com/kf/Ad4cc366b89d641d89a5aca9def6cc697M.png",
+    specs:[["Max Load","400 kg"],["Dimensions","54×62×180 cm"],["Battery","48V / 72AH Lithium"],["Power","1200 W"],["Wheel Type","Rubber rear wheels"],["Gross Weight","50 kg"],["Material","Manganese Steel"],["Work Time","5–6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Feature","Suitable for all terrains"]]},
 
-        // Spec Engine
-        function generateSpecs(title) {
-            const lowerTitle = title.toLowerCase();
-            
-            // 1. Load capacity auto-matching
-            let capacity = "300 kg";
-            if (lowerTitle.includes("400kg")) capacity = "400 kg";
-            else if (lowerTitle.includes("250kg")) capacity = "250 kg";
-            else if (lowerTitle.includes("150kg")) capacity = "150 kg";
-            else if (lowerTitle.includes("300kg")) capacity = "300 kg";
-            else if (lowerTitle.includes("600kg")) capacity = "600 kg";
-            document.getElementById('specCapacity').textContent = capacity;
+  // 爬楼机_04.png → DP800-2
+  { id:6, cat:"SC", name:"DP800-2 Heavy Duty 400kg — U-turn on spot",
+    img:"https://sc02.alicdn.com/kf/A17e7482dde5f48e69b3a270a5ecb7edep.png",
+    specs:[["Max Load","400 kg"],["Dimensions","50×65×113 cm"],["Battery","48V / 72AH ×2 Lithium"],["Power","1200 W"],["Wheel Type","Rubber rear wheels"],["Gross Weight","40 kg"],["Material","Manganese Steel"],["Work Time","400-story building"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"]]},
 
-            // 2. Power source matching
-            let power = "Manual Operation";
-            if (lowerTitle.includes("electric")) {
-                power = "Lithium Battery (48V / 800W - 1000W)";
-                if (lowerTitle.includes("1000w")) power = "Lithium Battery (48V / 1000W)";
-            }
-            document.getElementById('specPower').textContent = power;
+  // 爬楼机_05.png → DP2-800
+  { id:7, cat:"SC", name:"DP2-800 All-Terrain 400kg — Inflatable Wheels",
+    img:"https://sc02.alicdn.com/kf/A7416848e359a4e02bda51a155e7269b56.png",
+    specs:[["Max Load","400 kg"],["Dimensions","50×60×113 cm"],["Battery","48V / 40AH Lithium"],["Power","1500 W"],["Wheel Type","30cm inflatable large wheels"],["Gross Weight","35 kg"],["Material","Manganese Steel"],["Work Time","6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Feature","All-terrain versatile cargo hauling"]]},
 
-            // 3. Structure matching
-            let structure = "Heavy Duty Steel, Rigid Frame";
-            if (lowerTitle.includes("foldable") || lowerTitle.includes("folding")) {
-                structure = "Foldable Aerospace Aluminum / Steel (Space-Saving)";
-            }
-            document.getElementById('specStructure').textContent = structure;
-        }
+  // 爬楼机_06.png → LP-400
+  { id:8, cat:"SC", name:"LP-400 Caterpillar Track 400kg Stair Climber",
+    img:"https://sc02.alicdn.com/kf/Ac7b3cba421b84bb2b1d9a83a213949b4m.png",
+    specs:[["Max Load","400 kg"],["Dimensions","36×45×111 cm"],["Battery","48V / 72AH Lithium"],["Power","1200 W"],["Wheel Type","Crawler-type"],["Gross Weight","57 kg"],["Material","Manganese Steel"],["Tilt Angle","60 degrees"],["Work Time","3–4 hours"],["Charge Time","5–6 hours"],["Battery Life","3–5 years"]]},
 
-        function navigateHome() {
-            window.location.hash = '';
-        }
+  // 爬楼机_07.png → LP-600
+  { id:9, cat:"SC", name:"LP-600 Crawler 300kg — 360° Rotation",
+    img:"https://sc02.alicdn.com/kf/A04d13a7ab71b4c9d97d8050ee1d3eff1z.png",
+    specs:[["Max Load","300 kg"],["Dimensions","70×57×100 cm"],["Battery","48V / 20AH Lithium"],["Power","800 W"],["Wheel Type","Crawler-type"],["Gross Weight","56 kg"],["Material","Manganese Steel"],["Turning","360° rotation"],["Work Time","5–6 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"]]},
 
-        window.onload = loadProducts;
-    </script>
+  // ═══════════════════════════════════════════════════
+  // FULL ELECTRIC FORKLIFTS — 全电动叉车.pdf
+  // ═══════════════════════════════════════════════════
+  // 全电动叉车_01.png → CMAE-R02-1/2 (without weight)
+  { id:11, cat:"FE", name:"CMAE-F02-1 Seated Forklift 800kg / 2m",
+    img:"https://sc02.alicdn.com/kf/A50cca8f0c58b48058b66f2218e85729fL.png",
+    specs:[["Load Capacity","800 kg"],["Lift Height","2 m"],["Dimension","185×100×220 cm (w/o forks)"],["Battery","48V / 52AH Lead-acid"],["Power","1500 W"],["Operating Mode","Seated operation"],["Wheels","Solid rubber: Front 400-10 / Rear 400-8"],["Mast","10# C-channel steel"],["Brake","Drum brakes"],["Fork Materials","Forged monoblock"],["Net Weight","450 kg"]]},
+
+  { id:12, cat:"FE", name:"CMAE-F02-2 Seated Forklift 500kg / 2m",
+    img:"https://sc02.alicdn.com/kf/A50cca8f0c58b48058b66f2218e85729fL.png",
+    specs:[["Load Capacity","500 kg"],["Lift Height","2 m"],["Dimension","185×100×220 cm (w/o forks)"],["Battery","48V / 45AH Lead-acid"],["Power","1200 W"],["Operating Mode","Seated operation"],["Wheels","Solid rubber: Front 400-10 / Rear 400-8"],["Mast","10# C-channel steel"],["Brake","Drum brakes"],["Net Weight","430 kg"]]},
+
+  // 全电动叉车_02.png → CMAE-R02-2/2 (with weight)
+  { id:13, cat:"FE", name:"CMAE-F02-1 With Weight 800kg / 3m",
+    img:"https://sc02.alicdn.com/kf/Aa61bc2a891b24281a0a2e61b04f5e53cr.png",
+    specs:[["Load Capacity","800 kg"],["Lift Height","3 m"],["Dimension","185×100×220 cm"],["Battery","48V / 52AH Lead-acid"],["Power","1500 W"],["Turning Radius","150 cm"],["Mast","10# C-channel steel"],["Brake","Drum brakes"],["Fork Materials","Forged monoblock"],["Net Weight","450 kg"]]},
+
+  // 全电动叉车_03.png → CMAE-S03 / CMAE-F04
+  { id:14, cat:"FE", name:"CMAE-F04 Stand-on Stacker 800kg / 2m",
+    img:"https://sc02.alicdn.com/kf/Ac5c20db22dfb49ce990b5b62ea3d5589s.png",
+    specs:[["Load Capacity","800 kg"],["Lift Height","2 m"],["Dimension","170×90×220 cm"],["Battery","48V / 32A Lead-acid"],["Power","1600 W"],["Operating Mode","Stand on"],["Fork Width","20–90 cm adjustable"],["Fork Length","92 cm"],["Mast","Double gantry"],["Climbing Angle","15°"],["Net Weight","360 kg"]]},
+
+  { id:15, cat:"FE", name:"CMAE-F04 Stand-on Stacker 500kg / 2m",
+    img:"https://sc02.alicdn.com/kf/Ac5c20db22dfb49ce990b5b62ea3d5589s.png",
+    specs:[["Load Capacity","500 kg"],["Lift Height","2 m"],["Dimension","160×90×220 cm"],["Battery","48V / 32A Lead-acid"],["Power","1500 W"],["Operating Mode","Stand on"],["Fork Width","20–80 cm adjustable"],["Fork Length","80 cm"],["Mast","Double gantry"],["Net Weight","320 kg"]]},
+
+  // 全电动叉车_04.png → CMAE-R04 / CMAE-F06
+  { id:16, cat:"FE", name:"CMAE-F06 Precision Forklift 500kg / 2.1m",
+    img:"https://sc02.alicdn.com/kf/A295b0d93b0f34457826acbc5e12c014b3.png",
+    specs:[["Load Capacity","500 kg"],["Max Lift Height","210 cm"],["Dimension","L230cm / W78cm / H158cm"],["Battery","48V / 32A Lead-acid"],["Drive Motor","2000 W"],["Hoist Motor","2500 W"],["Travel Speed (empty)","8 km/h"],["Turning Radius","95 cm"],["Climbing","Full load 15% / Empty 18%"],["Front Wheels","Solid rubber 400×100mm"],["Net Weight","700 kg"],["Work Time","5 h"]]},
+
+  // 全电动叉车_05.png → CMAE-R05 / CMAE-F07
+  { id:17, cat:"FE", name:"CMAE-F07 Heavy Duty 2000kg / 3m",
+    img:"https://sc02.alicdn.com/kf/A9ec237d7ead841ffa98672b3a420a460E.png",
+    specs:[["Load Capacity","2000 kg"],["Max Lift Height","300 cm"],["Dimension","L337cm / W120cm / H215cm"],["Battery","48V / 32A Lead-acid"],["Drive Motor","5000 W"],["Hoist Motor","4000 W"],["Travel Speed (empty)","12 km/h"],["Lifting Speed (full)","15 cm/s"],["Turning Radius","95 cm"],["Front Wheels","Solid rubber 6.5-10"],["Work Time","5 h"]]},
+
+  // 全电动叉车_06.png → CMAE-R06 / CMAE-S09
+  { id:18, cat:"FE", name:"CMAE-S09 High Mast Forklift / 4.1m",
+    img:"https://sc02.alicdn.com/kf/Aab1e922161fd42d0a2c628003c2652daN.png",
+    specs:[["Max Operate Height","410 cm"],["Max Lift Height","300 cm"],["Dimension","337×120×215 cm"],["Mast Tilt Angle","5°/10°"],["Drive Motor","5000 W"],["Hoist Motor","4000 W"],["Travel Speed (empty)","12 km/h"],["Climbing (full)","12%"],["Turning Radius","180 cm"],["Charging Voltage","220V"]]},
+
+  // 全电动叉车_07.png → CMAE-R07 / CMAE-R10
+  { id:19, cat:"FE", name:"CMAE-R10 Brushless Motor Forklift 800kg / 2m",
+    img:"https://sc02.alicdn.com/kf/A9f4c560367464e5186d5bc9ccb07d1a8x.png",
+    specs:[["Load Capacity","800 kg"],["Lift Height","2 m"],["Dimension","L272cm / W90cm / H170cm"],["Battery","48V 75AH Lead-acid ×4"],["Power","1500 W Brushless Motor"],["Hoist Motor","1000 W"],["Turning Radius","150 cm"],["Fork Length","1070mm forged"],["Mast","100mm C-channel steel"],["Brake","Handbrake + Footbrake"],["Climbing Angle","12°"],["Net Weight","1100 kg"]]},
+
+  // 全电动叉车_08.png → CMAE-R08 / CMAE-S13
+  { id:20, cat:"FE", name:"CMAE-S13 Lithium Battery Stacker 1 Ton / 1.6m",
+    img:"https://sc02.alicdn.com/kf/A473941a63c6d4b55b3991cd709e93a1cr.png",
+    specs:[["Max Load","1 ton (1000 kg)"],["Lift Height","1.6 m"],["Dimension","107×40×228 cm"],["Battery","48V / 15AH Lithium"],["Power","800 W"],["Wheel Type","Rubber swivel casters + dual front wheels"],["Material","Manganese Steel"],["Work Time","6–7 hours"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"],["Gross Weight","205 kg"]]},
+
+  // ═══════════════════════════════════════════════════
+  // SEMI ELECTRIC FORKLIFTS — 半电动叉车.pdf
+  // ═══════════════════════════════════════════════════
+  // 半电动叉车_01.png → CMSE-S01
+  { id:21, cat:"SE", name:"CMSE-S01 Semi-Electric Stacker 1 Ton / 1.6m",
+    img:"https://sc02.alicdn.com/kf/A664d717a26a34646ab3d1af8de99efc2R.png",
+    specs:[["Max Load","1 ton (1000 kg)"],["Lift Height","1.6 m"],["Dimension","143×91×210 cm"],["Battery","48V / 15AH Lithium"],["Power","800 W"],["Operation","Button + Remote Control"],["Fork Length","1.17 m"],["Fork Outer Width","56 cm"],["Material","Manganese Steel"],["Work Time","~200 lifts"],["Charge Time","7–8 hours"],["Gross Weight","250 kg"]]},
+
+  // 半电动叉车_02.png → CMSE-S02
+  { id:22, cat:"SE", name:"CMSE-S02 Semi-Electric Stacker 1 Ton / 1.6m",
+    img:"https://sc02.alicdn.com/kf/Aa69869547f2947d9bb538477b3054277S.png",
+    specs:[["Max Load","1 ton (1000 kg)"],["Lift Height","1.6 m"],["Dimension","146×90×210 cm"],["Battery","48V / 15AH Lithium"],["Power","800 W"],["Operating Mode","Manual operation"],["Fork Length","1.17 m"],["Front Wheel","8 cm"],["Rear Wheel","12.5 cm"],["Material","Manganese Steel"],["Work Time","~200 lifts"],["Gross Weight","205 kg"]]},
+
+  // 半电动叉车_03.png → CMSE-S03
+  { id:23, cat:"SE", name:"CMSE-S03 Remote Control Stacker 500kg / 1.6m",
+    img:"https://sc02.alicdn.com/kf/Abdecabb3fd984f4a8472ae244ba7be4fV.png",
+    specs:[["Max Load","500 kg"],["Lift Height","1.6 m"],["Machine Height","1.08 m"],["Battery","12V Lead-acid DC"],["Work Speed","12 m/min"],["Forks Width","33 cm"],["Forks Length","60 cm"],["Operation","Wired + Wireless Remote"],["Material","Manganese Steel"],["Net Weight","300 kg"]]},
+
+  // 半电动叉车_04.png → CMSE-S05
+  { id:24, cat:"SE", name:"CMSE-S05 Compact Stacker 500kg / 1.7m",
+    img:"https://sc02.alicdn.com/kf/A76bbe9cf8814404f8eaef65c64fab4d7V.png",
+    specs:[["Max Load","500 kg"],["Lift Height","1.7 m"],["Min Fork Height","9 cm"],["Dimension","210×70×126 cm"],["Battery","24V / 20A Lead-acid"],["Power","800 W"],["Fork Outer Width","50 cm"],["Fork Length","85 cm"],["Front Wheel","8 cm"],["Rear Wheel","18 cm"],["Material","Manganese Steel"],["Net Weight","140 kg"]]},
+
+  // 半电动叉车_05.png → CMSE-S06
+  { id:25, cat:"SE", name:"CMSE-S06 Semi Stacker 1000kg / 1.3m",
+    img:"https://sc02.alicdn.com/kf/A8c28c3ded0f74e9caa1110ce8402d5a49.png",
+    specs:[["Load Capacity","1000 kg"],["Lift Height","1.3 m"],["Dimension","143×94×180 cm"],["Battery","48V / 15A Lead-acid"],["Power","1500 W"],["Wheel Type","Polyurethane wheels"],["Fork Length","118 cm"],["Fork Outer Width","55 cm"],["Charge Time","7–8 hours"],["Battery Life","3–5 years"]]},
+
+  // 半电动叉车_06.png → CMSE-S07 / CMSE-S08
+  { id:26, cat:"SE", name:"CMSE-S08 Universal Stacker 1–2 Ton / up to 3.5m",
+    img:"https://sc02.alicdn.com/kf/A2d052d3a7f3946859b8c9e88d7c92ab5V.png",
+    specs:[["Rated Load","1000 / 1500 / 2000 kg"],["Lifting Height","1600 / 2000 / 2500 / 3000 / 3500 mm"],["Voltage","DC 12V"],["Motor","DC Motor 2.2 kW"],["Wheel Type","Nylon"],["Fork Length","1070 mm"],["Fork Outer Width","680 mm"],["Vehicle Length","1740 mm"],["Turning Radius","1500 mm"],["Gross Weight","345–430 kg"]]},
+
+  // 半电动叉车_07.png → CMSE-S08 / CMSE-S12
+  { id:27, cat:"SE", name:"CMSE-S12 Mini Stacker 400kg / 1.3–1.6m",
+    img:"https://sc02.alicdn.com/kf/A3945075f7e554dfd92c5b8bb0a87340cv.png",
+    specs:[["Load Capacity","400 kg"],["Lift Height","1.3 m / 1.6 m"],["Fork Dimension","65×10 cm"],["Fork Outer Width","60 cm"],["Fork Inner Width","40 cm"],["Min Fork Height","9 cm"],["Wheel Type","Solid wheels 300-8"],["Motor Power","800 W"],["Battery","48V / 12A"]]},
+
+  // ═══════════════════════════════════════════════════
+  // LIFT MACHINES — 升降机.pdf
+  // ═══════════════════════════════════════════════════
+  // 升降机_01.png → CMLM-E01
+  { id:31, cat:"LM", name:"CMLM-E01 Channel Steel Lift 1000kg / 2–5m",
+    img:"https://sc02.alicdn.com/kf/Afd1d80ea896c409187d1b7e3c74b82f6b.png",
+    specs:[["Load Capacity","1000 kg"],["Lift Height","2 / 3 / 4 / 5 m"],["Dimension","1×1×(3–6) m"],["Motor Power","2500 W (2–3m) / 3000 W (4–5m)"],["Framework Width","70 cm"],["Material","10# Channel Steel"],["Operation","Wireless Remote Control"]]},
+
+  // 升降机_02.png → CMLM-E02
+  { id:32, cat:"LM", name:"CMLM-E02 Mobile Channel Steel Lift 300–500kg",
+    img:"https://sc02.alicdn.com/kf/A373cfc62f32a4dab9e5a5d5120c3acdbY.png",
+    specs:[["Load Capacity","300 / 500 kg"],["Lift Height","2 / 3 / 4 / 5 m"],["Dimension","1×1×(3–6) m"],["Motor Power","1800 / 3000 W"],["Framework Width","70 cm"],["Material","10# Channel Steel"],["Operation","Wireless Remote Control"],["Net Weight","200–350 kg"]]},
+
+  // 升降机_03.png → CMLM-E03
+  { id:33, cat:"LM", name:"CMLM-E03 Galvanized High-Altitude Lift 4–20m",
+    img:"https://sc02.alicdn.com/kf/A38e860adcf78461ab5bff3203033b32cZ.png",
+    specs:[["Specification","4–8m / 9–16m / 18–20m"],["Load Capacity","100 kg (4–16m) / 140–160 kg (18–20m)"],["Motor","PA300 950W / PA3600 1300W / PA1000 3000W"],["Material","Galvanized square pipe 1.5mm"],["Lifting Speed","12–16 m/min"],["Hoist Weight","18.5 kg"],["Motor Current","8/10 A"]]},
+
+  // 升降机_04.png → CMLM-E04
+  { id:34, cat:"LM", name:"CMLM-E04 Double Gantry Platform Lift 500kg",
+    img:"https://sc02.alicdn.com/kf/A80119134b91d44fab9716faa43604c4f9.png",
+    specs:[["Load Capacity","500 kg"],["Lift Height","2 / 3 / 4 / 5 / 6 / 7 / 8 / 9 / 10 m"],["Platform Size","1.35×0.75 m (≤6m) / 1.55×0.85 m (>6m)"],["Gantry Type","Double gantry"]]},
+
+  // 升降机_05.png → CMLM-E05
+  { id:35, cat:"LM", name:"CMLM-E05 Wire Rope Hoist Lift 230kg / 4.2m",
+    img:"https://sc02.alicdn.com/kf/A824cc9f484e249d293c291181eb4eedbH.png",
+    specs:[["Load Capacity","230 kg"],["Lifting Height","4.2 m"],["Power","2200 W"],["Operation","Wired / Wireless Remote"],["Hoist Type","Wire rope hoist"],["Wire Rope","5 mm"],["Steel Cable Load","600 kg"],["Product Height","123 cm"],["Lifting Speed","3–5 m/min"]]},
+
+  // 升降机_06.png → CMLM-E06
+  { id:36, cat:"LM", name:"CMLM-E06 Mini Crane / Electric Hoist 0.5–1 Ton",
+    img:"https://sc02.alicdn.com/kf/Af992ae0547f64c63bda79620d733539dM.png",
+    specs:[["Load Capacity","0.5 ton / 1 ton"],["Motor","220V / 1200W"],["Wire Rope","4mm × 12m"],["Single Rope","300 kg / 12 m/min"],["Double Rope","500 kg"],["Operation","Wireless Remote"],["Speed Adjustment","1000 / 500 / 250 kg"]]},
+
+  // 升降机_07.png → CMLM-E07 (aluminum pillar lifts)
+  { id:37, cat:"LM", name:"CMLM-E07 Aluminum Pillar Lift — Single/Double/Triple/Four",
+    img:"https://sc02.alicdn.com/kf/A2746bea2a6dd4341ac471ae21bea284fJ.png",
+    specs:[["Single-pillar","H: 4–10m / Load: 125kg / Platform: 640×580mm / 0.75–1.1kW"],["Double-pillar","H: 6–14m / Load: 200kg / Platform: 1100–1420×600mm / 1.5kW"],["Three pillars","H: 12–16m / Load: 250kg / Platform: 1560×850mm / 2.2kW"],["Four pillars","H: 14–18m / Load: 200–300kg / Platform: 1560–1600×850mm / 2.2kW"],["Power Supply","220V AC"]]},
+
+  // 升降机_08.png → CMLM-E08 (same spec as E07)
+  { id:38, cat:"LM", name:"CMLM-E08 Aluminum Alloy Aerial Work Platform",
+    img:"https://sc02.alicdn.com/kf/A98c9d438e6a5439eb061dd724cff688ax.png",
+    specs:[["Single-pillar","H: 4–10m / Load: 125kg / 0.75–1.1kW"],["Double-pillar","H: 6–14m / Load: 200kg / 1.5kW"],["Three pillars","H: 12–16m / Load: 250kg / 2.2kW"],["Four pillars","H: 14–18m / Load: 200–300kg / 2.2kW"],["Power Supply","220V AC"]]},
+
+  // 升降机_09.png → CMLM-E09
+  { id:39, cat:"LM", name:"CMLM-E09 Self-Propelled Scissor Lift 450kg / 10m",
+    img:"https://sc02.alicdn.com/kf/A56d31795b4874b3cb1aebe533d1b4623g.png",
+    specs:[["Safe Working Load","450 kg"],["Max Working Height","8 m / 10 m"],["Platform Size","2.27×1.12×1.1 m"],["Extension Platform","0.9 m / 113 kg load"],["Drive Motor","24V / 4.5 kW"],["Travel Speed (folded)","3.5 km/h"],["Travel Speed (lifting)","0.8 km/h"],["Max Climbing","25%"],["Battery","4×6V / 200Ah"],["Tires","381×127 mm"]]},
+
+  // 升降机_10.png → CMLM-H10
+  { id:40, cat:"LM", name:"CMLM-H10 Hydraulic Table Lift 500kg",
+    img:"https://sc02.alicdn.com/kf/A505d7d6b6672420fba365dc1d6b58e57l.png",
+    specs:[["Load Capacity","500 kg"],["Lift Range","30–140 cm"],["Dimension","120×50×140 cm"],["Platform Size","120×50 cm"],["Operation","Foot-operated hydraulic"],["Wheel","Nylon wheel"]]},
+
+  // 升降机_11.png → CMLM-H11
+  { id:41, cat:"LM", name:"CMLM-H11 Hydraulic Table Lift 150–300kg",
+    img:"https://sc02.alicdn.com/kf/Ab91ddc1baa794faa9f42ee2cebc54d02A.png",
+    specs:[["Load Capacity","150 kg / 300 kg"],["Lift Range","21–72 cm (150kg) / 28–90 cm (300kg)"],["Dimension","45×70×72 cm / 81.5×50×90 cm"],["Platform","45×70 cm / 81.5×50 cm"],["Wheel","Polyurethane wheel with rear brake"]]},
+
+  // 升降机_12.png → CMLM-E12
+  { id:42, cat:"LM", name:"CMLM-E12 Electric Table Lift 200kg–1 Ton",
+    img:"https://sc02.alicdn.com/kf/Acac15ecc1a39475ca3b876397b848aecV.png",
+    specs:[["Load Capacity","200 / 300 / 1000 kg"],["Min Height","30.5 / 28 / 38 cm"],["Max Height","126 / 90 / 100 cm"],["Platform","70×45 / 81.5×50 / 120×61 cm"],["Power","500 / 800 / 1000 W"],["Battery","12V Lead-acid"],["Wheel","4-inch Polyurethane with brake"],["Type","Double/Single-shear support"]]},
+
+  // 升降机_13.png → CMLM-E13
+  { id:43, cat:"LM", name:"CMLM-E13 Wall-Mount Cantilever Lift 250kg",
+    img:"https://sc02.alicdn.com/kf/A37475c92b2284ce597e5d99310294967O.png",
+    specs:[["Load Capacity","250 kg"],["Vehicle Height","4.8 m (Blue) / 3.2 m (Black)"],["Platform","600×40 cm / 400×40 cm"],["Motor Power","1.8 kW"],["Voltage","380 V"],["Operation","Wired Remote Control"],["Material","Steel"],["Product Weight","109 / 89 kg"],["Product Size","340×80×53 / 240×80×53 cm"]]},
+
+  // 升降机_14.png → CMLM-E14
+  { id:44, cat:"LM", name:"CMLM-E14 Electric Hoist Winch 300–500kg",
+    img:"https://sc02.alicdn.com/kf/Ad53e7b9e6d314f5e934ddd137dc55baeX.png",
+    specs:[["Load Capacity","300 / 400 / 500 kg"],["Voltage","220V"],["Rated Power","1400 / 1800 / 2200 W"],["Frequency","50 Hz"],["Lifting Speed","14 m/min"],["Wire Rope","5mm × 30–60m"],["Total Weight","94–113 kg"]]}
+];
+
+function show(cat) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById('t-' + cat).classList.add('on');
+  const list = cat === 'all' ? P : P.filter(p => p.cat === cat);
+  document.getElementById('grid').innerHTML = list.map(p => `
+    <div onclick="detail(${p.id})" class="card bg-white rounded-2xl shadow hover:shadow-2xl transition cursor-pointer overflow-hidden border border-slate-100 flex flex-col">
+      <div class="h-44 p-3 flex items-center justify-center bg-white relative overflow-hidden">
+        <img src="${p.img}" class="max-h-full object-contain" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300x200?text=CHENMA'">
+        <div class="ov absolute inset-0 bg-blue-900/70 flex items-center justify-center opacity-0 transition-all">
+          <span class="bg-white text-slate-900 px-4 py-1.5 rounded-full font-black text-xs">VIEW SPECS</span>
+        </div>
+      </div>
+      <div class="p-4 flex flex-col flex-grow bg-slate-50">
+        <h4 class="font-bold text-[11px] uppercase text-slate-800 line-clamp-2 mb-2 leading-tight h-9">${p.name}</h4>
+        <div class="mt-auto pt-2 border-t border-slate-200 flex justify-between text-[10px] font-black uppercase">
+          <span class="text-blue-600">${p.cat}</span>
+          <span class="text-slate-400">${p.specs[0][1]}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function detail(id) {
+  const p = P.find(x => x.id === id);
+  document.getElementById('home-view').classList.add('hidden');
+  document.getElementById('detail-view').classList.remove('hidden');
+  window.scrollTo(0, 0);
+  document.getElementById('dImg').src = p.img;
+  document.getElementById('dName').innerText = p.name;
+  document.getElementById('dCat').innerText = {SC:'Stair Climber',FE:'Full Electric Forklift',SE:'Semi Electric Forklift',LM:'Lift Machine'}[p.cat] || p.cat;
+  document.getElementById('dSpecs').innerHTML = p.specs.map(s =>
+    `<div class="flex justify-between border-b border-slate-50 pb-2 gap-2">
+       <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider flex-shrink-0">${s[0]}</span>
+       <span class="font-black text-slate-800 text-sm text-right">${s[1]}</span>
+     </div>`
+  ).join('');
+  const msg = `Hello, I am interested in: ${p.name}. Please send specifications and best price.`;
+  document.getElementById('dWA').href = `https://wa.me/8615991627891?text=${encodeURIComponent(msg)}`;
+  document.getElementById('dEM').href = `mailto:chenmagongsi@163.com?subject=Inquiry: ${p.name}&body=${encodeURIComponent(msg)}`;
+}
+
+function goHome() {
+  document.getElementById('home-view').classList.remove('hidden');
+  document.getElementById('detail-view').classList.add('hidden');
+}
+
+function setLang(l) { document.getElementById('ll').innerText = l.toUpperCase(); }
+
+  // Usage Guide Data - ADD NEW GUIDES OR ANALYSES HERE
+  const UsageData = [
+    {
+      type: "analysis",
+      title: "LP800 Crawler Climber Analysis",
+      desc: "Deep dive into the advantages and limitations of the LP800 series.",
+      pros: [
+        "Strong Load (400-800kg) & Labor-saving motor drive",
+        "Foldable design, fits in van trunks, includes universal wheels",
+        "Anti-slip tracks with brakes, fits most cement/tile stairs",
+        "Long-life removable lithium battery (3-5 years life)"
+      ],
+      cons: [
+        "Requires turning space (narrow corridors are difficult)",
+        "Rubber tracks wear down on gravel/high-intensity use",
+        "30-50kg self-weight (needs technique for loading)",
+        "Not for carpeted, plastic, or ultra-high (>20cm) steps"
+      ],
+      icon: "fa-balance-scale"
+    },
+    {
+      type: "analysis",
+      title: "CMLM-E02 Lift Analysis",
+      desc: "Deep dive into the guide rail wire rope lifting system.",
+      pros: [
+        "High cost-performance & mature wire rope tech",
+        "Smooth operation with low noise (indoor friendly)",
+        "Low civil requirements (70cm width, no deep pit)",
+        "Easy maintenance (visible wear, wireless remote)"
+      ],
+      cons: [
+        "Limited capacity (500kg) & height (5m max)",
+        "Elastic rope may cause slight leveling inaccuracy",
+        "Requires regular oiling & rope checks (fatigue)",
+        "Lower speed (≤0.63m/s), not for high-frequency use"
+      ],
+      icon: "fa-arrow-up"
+    },
+    {
+      type: "analysis",
+      title: "CMSE-S01 Semi-Electric Stacker",
+      desc: "Disassembling the 'Electric Lift & Manual Push' entry-level model.",
+      pros: [
+        "Ultra-low cost & maintenance fee (Entry-level choice)",
+        "Super compact: fits in elevators & cross-floor transport",
+        "Electric lifting (No manual pumping) saves physical effort",
+        "Adjustable forks: fits Single/Double/Sichuan pallets"
+      ],
+      cons: [
+        "Manual push/pull: labor-intensive for long distances",
+        "Limited height (1.5-3m) and capacity (0.5-1 Ton)",
+        "Requires perfectly flat indoor floors (No slopes/mud)",
+        "Lacks counterweight & braking system (Stability risks)"
+      ],
+      icon: "fa-walking"
+    },
+    {
+      type: "analysis",
+      title: "CMAE-F02 Forklift Analysis",
+      desc: "Performance review of the compact all-electric stacker series.",
+      pros: [
+        "Compact body (1.8m length) for narrow aisle navigation",
+        "No outrigger design: fits all pallet types (Single/Double-sided)",
+        "Four-wheel solid rubber tires for indoor/outdoor stability",
+        "Economic entry price with simple hydraulic control (License-free)"
+      ],
+      cons: [
+        "Light duty only (0.5-1 Ton) with load decay at max height",
+        "Lead-acid battery life: 4-6 hours intermittent use",
+        "Optimized for flat cement floors; not for mud or steep slopes",
+        "Economy build: basic ergonomics without shock-absorbing seats"
+      ],
+      icon: "fa-truck-loading"
+    },
+    {
+      type: "steps",
+      title: "Stair Climber Operation",
+      desc: "Basic steps for operating the LP800 series.",
+      steps: [
+        "Ensure the battery is fully charged (48V indicator).",
+        "Secure the cargo using the provided safety straps.",
+        "Incline the climber to a 45-degree angle before starting.",
+        "Use the 'Up/Down' switch to control track movement."
+      ],
+      icon: "fa-stairs"
+    },
+    {
+      type: "steps",
+      title: "Safety Best Practices",
+      desc: "General safety rules for all lifting equipment.",
+      steps: [
+        "Never exceed the rated load capacity (Max 2000kg).",
+        "Always wear safety shoes and a hard hat on-site.",
+        "Only operate on stable and level ground.",
+        "Keep a safe distance from moving parts."
+      ],
+      icon: "fa-shield-alt"
+    }
+  ];
+
+  function renderUsage() {
+    document.getElementById('usage-grid').innerHTML = UsageData.map(u => `
+      <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition flex flex-col h-full">
+        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+          <i class="fas ${u.icon} text-white text-xl"></i>
+        </div>
+        <h3 class="text-xl font-black mb-2 uppercase tracking-tight">${u.title}</h3>
+        <p class="text-slate-500 text-sm mb-6">${u.desc}</p>
+        
+        <div class="mt-auto space-y-4">
+          ${u.type === 'analysis' ? `
+            <div>
+              <span class="text-[10px] font-black text-green-600 uppercase tracking-widest block mb-2">Core Advantages</span>
+              <ul class="space-y-2">
+                ${u.pros.map(p => `<li class="text-[11px] text-slate-600 flex items-start"><i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>${p}</li>`).join('')}
+              </ul>
+            </div>
+            <div>
+              <span class="text-[10px] font-black text-orange-600 uppercase tracking-widest block mb-2">Key Limitations</span>
+              <ul class="space-y-2">
+                ${u.cons.map(c => `<li class="text-[11px] text-slate-600 flex items-start"><i class="fas fa-minus-circle text-orange-500 mt-1 mr-2"></i>${c}</li>`).join('')}
+              </ul>
+            </div>
+          ` : `
+            <ul class="space-y-3">
+              ${u.steps.map(s => `
+                <li class="flex items-start text-xs text-slate-600">
+                  <i class="fas fa-check-circle text-blue-600 mt-0.5 mr-2"></i>
+                  <span>${s}</span>
+                </li>
+              `).join('')}
+            </ul>
+          `}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.onload = () => {
+    show('all');
+    renderUsage();
+  };
+</script>
 </body>
 </html>
