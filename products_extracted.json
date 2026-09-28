@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "cat": "SC",
+    "name": "LP800-1 Electric Stair Climber 400kg",
+    "img": "https://sc02.alicdn.com/kf/Ab1c9f7237b25412ca342dd26ad6ec52cp.png"
+  },
+  {
+    "id": 2,
+    "cat": "SC",
+    "name": "LP800-101 Electric Stair Climber 250kg",
+    "img": "https://sc02.alicdn.com/kf/Ab1c9f7237b25412ca342dd26ad6ec52cp.png"
+  },
+  {
+    "id": 3,
+    "cat": "SC",
+    "name": "LP800-102 Electric Stair Climber 150kg",
+    "img": "https://sc02.alicdn.com/kf/Ab1c9f7237b25412ca342dd26ad6ec52cp.png"
+  },
+  {
+    "id": 4,
+    "cat": "SC",
+    "name": "LP800-2 Stair Climber 400kg — Training Wheels",
+    "img": "https://sc02.alicdn.com/kf/A298c48af79a042d293209ddf48553fcaz.png"
+  },
+  {
+    "id": 5,
+    "cat": "SC",
+    "name": "DP800-1 All-Terrain Stair Climber 400kg",
+    "img": "https://sc02.alicdn.com/kf/Ad4cc366b89d641d89a5aca9def6cc697M.png"
+  },
+  {
+    "id": 6,
+    "cat": "SC",
+    "name": "DP800-2 Heavy Duty 400kg — U-turn on spot",
+    "img": "https://sc02.alicdn.com/kf/A17e7482dde5f48e69b3a270a5ecb7edep.png"
+  },
+  {
+    "id": 7,
+    "cat": "SC",
+    "name": "DP2-800 All-Terrain 400kg — Inflatable Wheels",
+    "img": "https://sc02.alicdn.com/kf/A7416848e359a4e02bda51a155e7269b56.png"
+  },
+  {
+    "id": 8,
+    "cat": "SC",
+    "name": "LP-400 Caterpillar Track 400kg Stair Climber",
+    "img": "https://sc02.alicdn.com/kf/Ac7b3cba421b84bb2b1d9a83a213949b4m.png"
+  },
+  {
+    "id": 9,
+    "cat": "SC",
+    "name": "LP-600 Crawler 300kg — 360° Rotation",
+    "img": "https://sc02.alicdn.com/kf/A04d13a7ab71b4c9d97d8050ee1d3eff1z.png"
+  },
+  {
+    "id": 11,
+    "cat": "FE",
+    "name": "CMAE-F02-1 Seated Forklift 800kg / 2m",
+    "img": "https://sc02.alicdn.com/kf/A50cca8f0c58b48058b66f2218e85729fL.png"
+  },
+  {
+    "id": 12,
+    "cat": "FE",
+    "name": "CMAE-F02-2 Seated Forklift 500kg / 2m",
+    "img": "https://sc02.alicdn.com/kf/A50cca8f0c58b48058b66f2218e85729fL.png"
+  },
+  {
+    "id": 13,
+    "cat": "FE",
+    "name": "CMAE-F02-1 With Weight 800kg / 3m",
+    "img": "https://sc02.alicdn.com/kf/Aa61bc2a891b24281a0a2e61b04f5e53cr.png"
+  },
+  {
+    "id": 14,
+    "cat": "FE",
+    "name": "CMAE-F04 Stand-on Stacker 800kg / 2m",
+    "img": "https://sc02.alicdn.com/kf/Ac5c20db22dfb49ce990b5b62ea3d5589s.png"
+  },
+  {
+    "id": 15,
+    "cat": "FE",
+    "name": "CMAE-F04 Stand-on Stacker 500kg / 2m",
+    "img": "https://sc02.alicdn.com/kf/Ac5c20db22dfb49ce990b5b62ea3d5589s.png"
+  },
+  {
+    "id": 16,
+    "cat": "FE",
+    "name": "CMAE-F06 Precision Forklift 500kg / 2.1m",
+    "img": "https://sc02.alicdn.com/kf/A295b0d93b0f34457826acbc5e12c014b3.png"
+  },
+  {
+    "id": 17,
+    "cat": "FE",
+    "name": "CMAE-F07 Heavy Duty 2000kg / 3m",
+    "img": "https://sc02.alicdn.com/kf/A9ec237d7ead841ffa98672b3a420a460E.png"
+  },
+  {
+    "id": 18,
+    "cat": "FE",
+    "name": "CMAE-S09 High Mast Forklift / 4.1m",
+    "img": "https://sc02.alicdn.com/kf/Aab1e922161fd42d0a2c628003c2652daN.png"
+  },
+  {
+    "id": 19,
+    "cat": "FE",
+    "name": "CMAE-R10 Brushless Motor Forklift 800kg / 2m",
+    "img": "https://sc02.alicdn.com/kf/A9f4c560367464e5186d5bc9ccb07d1a8x.png"
+  },
+  {
+    "id": 20,
+    "cat": "FE",
+    "name": "CMAE-S13 Lithium Battery Stacker 1 Ton / 1.6m",
+    "img": "https://sc02.alicdn.com/kf/A473941a63c6d4b55b3991cd709e93a1cr.png"
+  },
+  {
+    "id": 21,
+    "cat": "SE",
+    "name": "CMSE-S01 Semi-Electric Stacker 1 Ton / 1.6m",
+    "img": "https://sc02.alicdn.com/kf/A664d717a26a34646ab3d1af8de99efc2R.png"
+  },
+  {
+    "id": 22,
+    "cat": "SE",
+    "name": "CMSE-S02 Semi-Electric Stacker 1 Ton / 1.6m",
+    "img": "https://sc02.alicdn.com/kf/Aa69869547f2947d9bb538477b3054277S.png"
+  },
+  {
+    "id": 23,
+    "cat": "SE",
+    "name": "CMSE-S03 Remote Control Stacker 500kg / 1.6m",
+    "img": "https://sc02.alicdn.com/kf/Abdecabb3fd984f4a8472ae244ba7be4fV.png"
+  },
+  {
+    "id": 24,
+    "cat": "SE",
+    "name": "CMSE-S05 Compact Stacker 500kg / 1.7m",
+    "img": "https://sc02.alicdn.com/kf/A76bbe9cf8814404f8eaef65c64fab4d7V.png"
+  },
+  {
+    "id": 25,
+    "cat": "SE",
+    "name": "CMSE-S06 Semi Stacker 1000kg / 1.3m",
+    "img": "https://sc02.alicdn.com/kf/A8c28c3ded0f74e9caa1110ce8402d5a49.png"
+  },
+  {
+    "id": 26,
+    "cat": "SE",
+    "name": "CMSE-S08 Universal Stacker 1–2 Ton / up to 3.5m",
+    "img": "https://sc02.alicdn.com/kf/A2d052d3a7f3946859b8c9e88d7c92ab5V.png"
+  },
+  {
+    "id": 27,
+    "cat": "SE",
+    "name": "CMSE-S12 Mini Stacker 400kg / 1.3–1.6m",
+    "img": "https://sc02.alicdn.com/kf/A3945075f7e554dfd92c5b8bb0a87340cv.png"
+  },
+  {
+    "id": 31,
+    "cat": "LM",
+    "name": "CMLM-E01 Channel Steel Lift 1000kg / 2–5m",
+    "img": "https://sc02.alicdn.com/kf/Afd1d80ea896c409187d1b7e3c74b82f6b.png"
+  },
+  {
+    "id": 32,
+    "cat": "LM",
+    "name": "CMLM-E02 Mobile Channel Steel Lift 300–500kg",
+    "img": "https://sc02.alicdn.com/kf/A373cfc62f32a4dab9e5a5d5120c3acdbY.png"
+  },
+  {
+    "id": 33,
+    "cat": "LM",
+    "name": "CMLM-E03 Galvanized High-Altitude Lift 4–20m",
+    "img": "https://sc02.alicdn.com/kf/A38e860adcf78461ab5bff3203033b32cZ.png"
+  },
+  {
+    "id": 34,
+    "cat": "LM",
+    "name": "CMLM-E04 Double Gantry Platform Lift 500kg",
+    "img": "https://sc02.alicdn.com/kf/A80119134b91d44fab9716faa43604c4f9.png"
+  },
+  {
+    "id": 35,
+    "cat": "LM",
+    "name": "CMLM-E05 Wire Rope Hoist Lift 230kg / 4.2m",
+    "img": "https://sc02.alicdn.com/kf/A824cc9f484e249d293c291181eb4eedbH.png"
+  },
+  {
+    "id": 36,
+    "cat": "LM",
+    "name": "CMLM-E06 Mini Crane / Electric Hoist 0.5–1 Ton",
+    "img": "https://sc02.alicdn.com/kf/Af992ae0547f64c63bda79620d733539dM.png"
+  },
+  {
+    "id": 37,
+    "cat": "LM",
+    "name": "CMLM-E07 Aluminum Pillar Lift — Single/Double/Triple/Four",
+    "img": "https://sc02.alicdn.com/kf/A2746bea2a6dd4341ac471ae21bea284fJ.png"
+  },
+  {
+    "id": 38,
+    "cat": "LM",
+    "name": "CMLM-E08 Aluminum Alloy Aerial Work Platform",
+    "img": "https://sc02.alicdn.com/kf/A98c9d438e6a5439eb061dd724cff688ax.png"
+  },
+  {
+    "id": 39,
+    "cat": "LM",
+    "name": "CMLM-E09 Self-Propelled Scissor Lift 450kg / 10m",
+    "img": "https://sc02.alicdn.com/kf/A56d31795b4874b3cb1aebe533d1b4623g.png"
+  },
+  {
+    "id": 40,
+    "cat": "LM",
+    "name": "CMLM-H10 Hydraulic Table Lift 500kg",
+    "img": "https://sc02.alicdn.com/kf/A505d7d6b6672420fba365dc1d6b58e57l.png"
+  },
+  {
+    "id": 41,
+    "cat": "LM",
+    "name": "CMLM-H11 Hydraulic Table Lift 150–300kg",
+    "img": "https://sc02.alicdn.com/kf/Ab91ddc1baa794faa9f42ee2cebc54d02A.png"
+  },
+  {
+    "id": 42,
+    "cat": "LM",
+    "name": "CMLM-E12 Electric Table Lift 200kg–1 Ton",
+    "img": "https://sc02.alicdn.com/kf/Acac15ecc1a39475ca3b876397b848aecV.png"
+  },
+  {
+    "id": 43,
+    "cat": "LM",
+    "name": "CMLM-E13 Wall-Mount Cantilever Lift 250kg",
+    "img": "https://sc02.alicdn.com/kf/A37475c92b2284ce597e5d99310294967O.png"
+  },
+  {
+    "id": 44,
+    "cat": "LM",
+    "name": "CMLM-E14 Electric Hoist Winch 300–500kg",
+    "img": "https://sc02.alicdn.com/kf/Ad53e7b9e6d314f5e934ddd137dc55baeX.png"
+  }
+]
