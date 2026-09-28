@@ -35,11 +35,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Feature",
@@ -83,11 +83,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Feature",
@@ -131,11 +131,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Feature",
@@ -179,11 +179,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Feature",
@@ -227,15 +227,15 @@
       },
       {
         "k": "Work Time",
-        "v": "5– hours"
+        "v": "5–6 hours"
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Feature",
@@ -283,11 +283,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       }
     ]
   },
@@ -331,11 +331,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Feature",
@@ -383,15 +383,15 @@
       },
       {
         "k": "Work Time",
-        "v": "3– hours"
+        "v": "3–4 hours"
       },
       {
         "k": "Charge Time",
-        "v": "5– hours"
+        "v": "5–6 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       }
     ]
   },
@@ -435,15 +435,15 @@
       },
       {
         "k": "Work Time",
-        "v": "5– hours"
+        "v": "5–6 hours"
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       }
     ]
   },
@@ -627,7 +627,7 @@
       },
       {
         "k": "Fork Width",
-        "v": "20–0 cm adjustable"
+        "v": "20–90 cm adjustable"
       },
       {
         "k": "Fork Length",
@@ -679,7 +679,7 @@
       },
       {
         "k": "Fork Width",
-        "v": "20–0 cm adjustable"
+        "v": "20–80 cm adjustable"
       },
       {
         "k": "Fork Length",
@@ -943,15 +943,15 @@
       },
       {
         "k": "Work Time",
-        "v": "6– hours"
+        "v": "6–7 hours"
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       },
       {
         "k": "Gross Weight",
@@ -1007,7 +1007,7 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Gross Weight",
@@ -1215,11 +1215,11 @@
       },
       {
         "k": "Charge Time",
-        "v": "7– hours"
+        "v": "7–8 hours"
       },
       {
         "k": "Battery Life",
-        "v": "3– years"
+        "v": "3–5 years"
       }
     ]
   },
@@ -1267,7 +1267,7 @@
       },
       {
         "k": "Gross Weight",
-        "v": "345–30 kg"
+        "v": "345–430 kg"
       }
     ]
   },
@@ -1331,11 +1331,11 @@
       },
       {
         "k": "Dimension",
-        "v": "1×1×(3–) m"
+        "v": "1×1×(3–6) m"
       },
       {
         "k": "Motor Power",
-        "v": "2500 W (2– 5m) / 3000 W (4– 5m)"
+        "v": "2500 W (2–3m) / 3000 W (4–5m)"
       },
       {
         "k": "Framework Width",
@@ -1367,7 +1367,7 @@
       },
       {
         "k": "Dimension",
-        "v": "1×1×(3–) m"
+        "v": "1×1×(3–6) m"
       },
       {
         "k": "Motor Power",
@@ -1387,7 +1387,7 @@
       },
       {
         "k": "Net Weight",
-        "v": "200–50 kg"
+        "v": "200–350 kg"
       }
     ]
   },
@@ -1399,11 +1399,11 @@
     "specs": [
       {
         "k": "Specification",
-        "v": "4– 5m / 9–6m / 18– 20m"
+        "v": "4–8m / 9–16m / 18–20m"
       },
       {
         "k": "Load Capacity",
-        "v": "100 kg (4–6m) / 140–60 kg (18– 20m)"
+        "v": "100 kg (4–16m) / 140–160 kg (18–20m)"
       },
       {
         "k": "Motor",
@@ -1415,7 +1415,7 @@
       },
       {
         "k": "Lifting Speed",
-        "v": "12–6 m/min"
+        "v": "12–16 m/min"
       },
       {
         "k": "Hoist Weight",
@@ -1443,7 +1443,7 @@
       },
       {
         "k": "Platform Size",
-        "v": "1.35×0.75 m (≤m) / 1.55×0.85 m (>6m)"
+        "v": "1.35×0.75 m (≤6m) / 1.55×0.85 m (>6m)"
       },
       {
         "k": "Gantry Type",
@@ -1491,7 +1491,7 @@
       },
       {
         "k": "Lifting Speed",
-        "v": "3– m/min"
+        "v": "3–5 m/min"
       }
     ]
   },
@@ -1539,19 +1539,19 @@
     "specs": [
       {
         "k": "Single-pillar",
-        "v": "H: 4– 20m / Load: 125kg / Platform: 640×580mm / 0.75– 1.1kW"
+        "v": "H: 4–10m / Load: 125kg / Platform: 640×580mm / 0.75–1.1kW"
       },
       {
         "k": "Double-pillar",
-        "v": "H: 6–4m / Load: 200kg / Platform: 1100–420×600mm / 1.5kW"
+        "v": "H: 6–14m / Load: 200kg / Platform: 1100–1420×600mm / 1.5kW"
       },
       {
         "k": "Three pillars",
-        "v": "H: 12–6m / Load: 250kg / Platform: 1560×850mm / 2.2kW"
+        "v": "H: 12–16m / Load: 250kg / Platform: 1560×850mm / 2.2kW"
       },
       {
         "k": "Four pillars",
-        "v": "H: 14–8m / Load: 200– 300kg / Platform: 1560–600×850mm / 2.2kW"
+        "v": "H: 14–18m / Load: 200–300kg / Platform: 1560–1600×850mm / 2.2kW"
       },
       {
         "k": "Power Supply",
@@ -1567,19 +1567,19 @@
     "specs": [
       {
         "k": "Single-pillar",
-        "v": "H: 4– 20m / Load: 125kg / 0.75– 1.1kW"
+        "v": "H: 4–10m / Load: 125kg / 0.75–1.1kW"
       },
       {
         "k": "Double-pillar",
-        "v": "H: 6–4m / Load: 200kg / 1.5kW"
+        "v": "H: 6–14m / Load: 200kg / 1.5kW"
       },
       {
         "k": "Three pillars",
-        "v": "H: 12–6m / Load: 250kg / 2.2kW"
+        "v": "H: 12–16m / Load: 250kg / 2.2kW"
       },
       {
         "k": "Four pillars",
-        "v": "H: 14–8m / Load: 200– 300kg / 2.2kW"
+        "v": "H: 14–18m / Load: 200–300kg / 2.2kW"
       },
       {
         "k": "Power Supply",
@@ -1647,7 +1647,7 @@
       },
       {
         "k": "Lift Range",
-        "v": "30–40 cm"
+        "v": "30–140 cm"
       },
       {
         "k": "Dimension",
@@ -1679,7 +1679,7 @@
       },
       {
         "k": "Lift Range",
-        "v": "21–2 cm (150kg) / 28–0 cm (300kg)"
+        "v": "21–72 cm (150kg) / 28–90 cm (300kg)"
       },
       {
         "k": "Dimension",
@@ -1807,11 +1807,11 @@
       },
       {
         "k": "Wire Rope",
-        "v": "5mm × 30– 20m"
+        "v": "5mm × 30–60m"
       },
       {
         "k": "Total Weight",
-        "v": "94–13 kg"
+        "v": "94–113 kg"
       }
     ]
   }
