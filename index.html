@@ -181,13 +181,13 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="container mx-auto px-6">
       <div class="text-center mb-10">
         <h2 class="text-3xl font-black uppercase tracking-tighter mb-2">Official Product Catalog</h2>
-        <p class="text-slate-500 text-sm">Real products from official PDF manuals · 4 categories · 36 models</p>
+        <p class="text-slate-500 text-sm">Real products from official PDF manuals · 4 categories · 40 models</p>
         <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-4 rounded"></div>
       </div>
       <div class="flex flex-wrap justify-center gap-2 mb-10">
-        <button id="t-all" onclick="show('all')" class="cat-btn on px-6 py-2 rounded-full font-bold border border-slate-300 transition">ALL (36)</button>
-        <button id="t-SC" onclick="show('SC')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Stair Climbers (7)</button>
-        <button id="t-FE" onclick="show('FE')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Full Electric Forklifts (8)</button>
+        <button id="t-all" onclick="show('all')" class="cat-btn on px-6 py-2 rounded-full font-bold border border-slate-300 transition">ALL (40)</button>
+        <button id="t-SC" onclick="show('SC')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Stair Climbers (9)</button>
+        <button id="t-FE" onclick="show('FE')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Full Electric Forklifts (10)</button>
         <button id="t-SE" onclick="show('SE')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Semi Electric Forklifts (7)</button>
         <button id="t-LM" onclick="show('LM')" class="cat-btn px-6 py-2 rounded-full font-bold bg-white border border-slate-300 transition">Lift Machines (14)</button>
       </div>
@@ -533,12 +533,59 @@ const P = [
     specs:[["Load Capacity","300 / 400 / 500 kg"],["Voltage","220V"],["Rated Power","1400 / 1800 / 2200 W"],["Frequency","50 Hz"],["Lifting Speed","14 m/min"],["Wire Rope","5mm × 30–60m"],["Total Weight","94–113 kg"]]}
 ];
 
+const PRODUCT_PATHS = {
+  1: "lp800-1-electric-stair-climber-400kg.html",
+  2: "lp800-101-electric-stair-climber-250kg.html",
+  3: "lp800-102-electric-stair-climber-150kg.html",
+  4: "lp800-2-stair-climber-400kg-training-wheels.html",
+  5: "dp800-1-all-terrain-stair-climber-400kg.html",
+  6: "dp800-2-heavy-duty-400kg-u-turn-on-spot.html",
+  7: "dp2-800-all-terrain-400kg-inflatable-wheels.html",
+  8: "lp-400-caterpillar-track-400kg-stair-climber.html",
+  9: "lp-600-crawler-300kg-360-rotation.html",
+  11: "cmae-f02-1-seated-forklift-800kg-2m.html",
+  12: "cmae-f02-2-seated-forklift-500kg-2m.html",
+  13: "cmae-f02-1-with-weight-800kg-3m.html",
+  14: "cmae-f04-stand-on-stacker-800kg-2m.html",
+  15: "cmae-f04-stand-on-stacker-500kg-2m.html",
+  16: "cmae-f06-precision-forklift-500kg-21m.html",
+  17: "cmae-f07-heavy-duty-2000kg-3m.html",
+  18: "cmae-s09-high-mast-forklift-41m.html",
+  19: "cmae-r10-brushless-motor-forklift-800kg-2m.html",
+  20: "cmae-s13-lithium-battery-stacker-1-ton-16m.html",
+  21: "cmse-s01-semi-electric-stacker-1-ton-16m.html",
+  22: "cmse-s02-semi-electric-stacker-1-ton-16m.html",
+  23: "cmse-s03-remote-control-stacker-500kg-16m.html",
+  24: "cmse-s05-compact-stacker-500kg-17m.html",
+  25: "cmse-s06-semi-stacker-1000kg-13m.html",
+  26: "cmse-s08-universal-stacker-1-ton-up-to-35m.html",
+  27: "cmse-s12-mini-stacker-400kg-136m.html",
+  31: "cmlm-e01-channel-steel-lift-1000kg-2m.html",
+  32: "cmlm-e02-mobile-channel-steel-lift-300500kg.html",
+  33: "cmlm-e03-galvanized-high-altitude-lift-40m.html",
+  34: "cmlm-e04-double-gantry-platform-lift-500kg.html",
+  35: "cmlm-e05-wire-rope-hoist-lift-230kg-42m.html",
+  36: "cmlm-e06-mini-crane-electric-hoist-05-ton.html",
+  37: "cmlm-e07-aluminum-pillar-lift-singledoubletriplefour.html",
+  38: "cmlm-e08-aluminum-alloy-aerial-work-platform.html",
+  39: "cmlm-e09-self-propelled-scissor-lift-450kg-10m.html",
+  40: "cmlm-h10-hydraulic-table-lift-500kg.html",
+  41: "cmlm-h11-hydraulic-table-lift-150300kg.html",
+  42: "cmlm-e12-electric-table-lift-200kg-ton.html",
+  43: "cmlm-e13-wall-mount-cantilever-lift-250kg.html",
+  44: "cmlm-e14-electric-hoist-winch-300500kg.html"
+};
+
+function productPath(id) {
+  return PRODUCT_PATHS[id];
+}
+
 function show(cat) {
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on'));
   document.getElementById('t-' + cat).classList.add('on');
   const list = cat === 'all' ? P : P.filter(p => p.cat === cat);
   document.getElementById('grid').innerHTML = list.map(p => `
-    <div onclick="detail(${p.id})" class="card bg-white rounded-2xl shadow hover:shadow-2xl transition cursor-pointer overflow-hidden border border-slate-100 flex flex-col">
+    <a href="products/${productPath(p.id)}" onclick="detail(${p.id}); return false" class="card bg-white rounded-2xl shadow hover:shadow-2xl transition cursor-pointer overflow-hidden border border-slate-100 flex flex-col">
       <div class="h-44 p-3 flex items-center justify-center bg-white relative overflow-hidden">
         <img src="${p.img}" class="max-h-full object-contain" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300x200?text=CHENMA'">
         <div class="ov absolute inset-0 bg-blue-900/70 flex items-center justify-center opacity-0 transition-all">
@@ -552,7 +599,7 @@ function show(cat) {
           <span class="text-slate-400">${p.specs[0][1]}</span>
         </div>
       </div>
-    </div>
+    </a>
   `).join('');
 }
 
