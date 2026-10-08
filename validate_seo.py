@@ -15,8 +15,9 @@ def read(path):
 
 sitemap = read(SITEMAP)
 locs = [x.strip() for x in re.findall(r'<loc>\s*(.*?)\s*</loc>', sitemap, re.S)]
-if len(locs) != 67:
-    errors.append(f'Sitemap URL count is {len(locs)}, expected 67')
+expected_sitemap_count = len(list(ROOT.glob('*.html'))) + len(list((ROOT / 'products').glob('*.html'))) + len(list((ROOT / 'blog').glob('*.html'))) - 1
+if len(locs) != expected_sitemap_count:
+    errors.append(f'Sitemap URL count is {len(locs)}, expected {expected_sitemap_count}')
 
 sitemap_paths = []
 for loc in locs:
