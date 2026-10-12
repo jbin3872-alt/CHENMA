@@ -41,11 +41,18 @@ for rel in required:
     source = read(path)
     title_match = re.search(r'<title>(.*?)</title>', source, re.I | re.S)
     title = html_lib.unescape(re.sub(r'\s+', ' ', title_match.group(1)).strip()) if title_match else ''
-    desc_match = re.search(r'<meta\s+[^>]*name=["\']description["\'][^>]*>', source, re.I | re.S)
+    desc_tags = re.findall(r'<meta\s+[^>]*name=["\']description["\'][^>]*>', source, re.I | re.S)
+    if len(desc_tags) != 1:
+        errors.append(f'Meta Description tag count is {len(desc_tags)}, expected 1: {rel}')
     desc_content = ''
-    if desc_match:
-        content_match = re.search(r'content=["\'](.*?)["\']', desc_match.group(0), re.I | re.S)
+    if desc_tags:
+        desc_tag = desc_tags[0]
+        if '<meta' in desc_tag.lower()[1:] or 'content=<meta' in desc_tag.lower():
+            errors.append(f'Malformed nested Meta Description tag: {rel}')
+        content_match = re.search(r'content=["\'](.*?)["\']', desc_tag, re.I | re.S)
         desc_content = html_lib.unescape(content_match.group(1).strip()) if content_match else ''
+        if not content_match or re.search(r'(?:follow|css\.com|s\.com)\\s*["\']?\\s*>?$', desc_tag, re.I):
+            errors.append(f'Malformed Meta Description attributes: {rel}')
     canon_match = re.search(r'<link\s+[^>]*rel=["\']canonical["\'][^>]*>', source, re.I | re.S)
     canonical = ''
     if canon_match:
