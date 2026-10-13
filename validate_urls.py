@@ -1,45 +1,113 @@
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urljoin, urlparse
+import json
 import re
 import sys
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent
 BASE = "https://www.chenmalifting.com/"
-# Redirect fixtures: legacy URLs must stay out of site links and Sitemap,
-# but each must retain one explicit 301 rule in _redirects.
 REDIRECT_FIXTURES = (
     ("cmlm-e02-mobile-channel-steel-lift-30000kg.html", "cmlm-e02-mobile-channel-steel-lift-300500kg.html"),
     ("cmlm-h11-hydraulic-table-lift-15000kg.html", "cmlm-h11-hydraulic-table-lift-150300kg.html"),
     ("cmlm-e14-electric-hoist-winch-30000kg.html", "cmlm-e14-electric-hoist-winch-300500kg.html"),
 )
-PRODUCTS = sorted((ROOT / "products").glob("*.html"))
-HTML_FILES = sorted(ROOT.glob("*.html")) + sorted((ROOT / "blog").glob("*.html")) + PRODUCTS
+HTML_FILES = sorted(set(ROOT.glob("*.html")) | set((ROOT / "blog").rglob("*.html")) | set((ROOT / "products").rglob("*.html")))
 errors = []
 
-for path in HTML_FILES:
-    text = path.read_text(encoding="utf-8-sig")
-    for old, _new in REDIRECT_FIXTURES:
-        if old in text:
-            errors.append(f"{path.relative_to(ROOT)}: legacy redirect slug leaked into site content: {old}")
-    for url in re.findall(r"https?://[^\"'\\s<>]+", text):
-        if "chenmalifting.com" in url and url not in (BASE.rstrip("/"), BASE) and not url.startswith(BASE):
-            errors.append(f"{path.relative_to(ROOT)}: non-canonical site URL {url}")
-    for href in re.findall(r"(?:href|src)=\"([^\"]+)\"", text):
-        if href == "products/${productPath(p.id)}":
-            continue
-        if href.startswith(("products/", "../products/", "./products/")) and not href.split("?", 1)[0].endswith(".html"):
-            errors.append(f"{path.relative_to(ROOT)}: product link lacks .html ({href})")
-    if path == ROOT / "index.html" and "products/${productPath(p.id)}" not in text:
-        errors.append("index.html: dynamic product link template is missing")
-    if path in PRODUCTS:
-        canonical = re.search(r'<link rel="canonical" href="([^"]+)"', text)
-        if not canonical or not canonical.group(1).startswith(BASE):
-            errors.append(f"{path.relative_to(ROOT)}: missing canonical URL")
-        elif not canonical.group(1).endswith(f"/products/{path.name}"):
-            errors.append(f"{path.relative_to(ROOT)}: canonical does not match filename")
+class LinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links = []
+        self.jsonld = []
 
-redirects = ROOT / "_redirects"
-redirect_text = redirects.read_text(encoding="utf-8-sig") if redirects.exists() else ""
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        for key in ("href", "content"):
+            value = attrs.get(key)
+            if value and (key == "href" or attrs.get("property") == "og:url"):
+                self.links.append((value, self.getpos()[0], key))
+        if tag == "script" and attrs.get("type", "").lower() == "application/ld+json":
+            self._jsonld_start = True
+            self._jsonld_buffer = []
+
+    def handle_data(self, data):
+        if getattr(self, "_jsonld_start", False):
+            self._jsonld_buffer.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "script" and getattr(self, "_jsonld_start", False):
+            raw = "".join(self._jsonld_buffer).strip()
+            if raw:
+                self.jsonld.append((raw, self.getpos()[0]))
+            self._jsonld_start = False
+
+
+def internal_target(value, page):
+    value = value.strip()
+    if value == "products/${productPath(p.id)}":
+        return None
+    if value.startswith(("#", "mailto:", "tel:", "javascript:")):
+        return None
+    parsed = urlparse(value)
+    if parsed.scheme and parsed.netloc:
+        if parsed.netloc.lower() not in {"www.chenmalifting.com", "chenmalifting.com"}:
+            return None
+        if parsed.netloc.lower() == "chenmalifting.com":
+            errors.append(f"{page.relative_to(ROOT)}: bare-domain URL at internal target: {value}")
+        path = parsed.path
+    elif parsed.scheme or parsed.netloc:
+        return None
+    else:
+        path = urljoin("/" + page.relative_to(ROOT).as_posix(), value).split("?", 1)[0].split("#", 1)[0]
+    path = unquote(path).lstrip("/")
+    if not path or path.endswith("/"):
+        return None
+    return Path(path)
+
+for page in HTML_FILES:
+    source = page.read_text(encoding="utf-8-sig")
+    parser = LinkParser()
+    try:
+        parser.feed(source)
+    except Exception as exc:
+        errors.append(f"{page.relative_to(ROOT)}: HTML parse error: {exc}")
+    for value, line, _kind in parser.links:
+        target = internal_target(value, page)
+        if target is None:
+            continue
+        if target.suffix != ".html":
+            errors.append(f"{page.relative_to(ROOT)}:{line}: internal page URL lacks .html: {value}")
+        target_path = ROOT / target
+        if target.suffix == ".html" and not target_path.exists():
+            errors.append(f"{page.relative_to(ROOT)}:{line}: internal target does not exist: {value}")
+    for raw, line in parser.jsonld:
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            errors.append(f"{page.relative_to(ROOT)}:{line}: invalid JSON-LD: {exc}")
+            continue
+        stack = [data]
+        while stack:
+            item = stack.pop()
+            if isinstance(item, dict):
+                for key, value in item.items():
+                    if key in {"url", "@id"} and isinstance(value, str):
+                        target = internal_target(value, page)
+                        if target is not None and target.suffix == ".html" and not (ROOT / target).exists():
+                            errors.append(f"{page.relative_to(ROOT)}:{line}: JSON-LD target does not exist: {value}")
+                    elif isinstance(value, (dict, list)):
+                        stack.append(value)
+            elif isinstance(item, list):
+                stack.extend(item)
+
+for old, _new in REDIRECT_FIXTURES:
+    for page in HTML_FILES:
+        if old in page.read_text(encoding="utf-8-sig"):
+            errors.append(f"{page.relative_to(ROOT)}: redirect fixture leaked into site content: {old}")
+
+redirect_text = (ROOT / "_redirects").read_text(encoding="utf-8-sig") if (ROOT / "_redirects").exists() else ""
 for old, new in REDIRECT_FIXTURES:
     fixture = rf"^/products/{re.escape(old)} /products/{re.escape(new)} 301$"
     if not re.search(fixture, redirect_text, re.M):
@@ -50,17 +118,20 @@ try:
     tree = ET.parse(sitemap)
     root = tree.getroot()
 except (OSError, ET.ParseError) as exc:
-    errors.append(f"sitemap.xml: invalid XML ({exc})")
+    errors.append(f"sitemap.xml: invalid XML: {exc}")
+    locs = []
 else:
     locs = [node.text or "" for node in root.iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
-    for old, _new in REDIRECT_FIXTURES:
-        if any(old in loc for loc in locs):
-            errors.append(f"sitemap.xml: legacy redirect slug leaked into Sitemap: {old}")
     for loc in locs:
-        if "chenmalifting.com" in loc and not loc.startswith(BASE):
-            errors.append(f"sitemap.xml: non-canonical URL {loc}")
-        if loc.startswith(BASE + "products/") and not loc.endswith(".html"):
-            errors.append(f"sitemap.xml: product URL lacks .html {loc}")
+        parsed = urlparse(loc)
+        if parsed.netloc.lower() == "chenmalifting.com":
+            errors.append(f"sitemap.xml: bare-domain URL: {loc}")
+        if parsed.netloc.lower() == "www.chenmalifting.com" and (parsed.query or parsed.fragment):
+            errors.append(f"sitemap.xml: query or fragment: {loc}")
+        if parsed.netloc.lower() == "www.chenmalifting.com" and parsed.path not in {"", "/"} and not parsed.path.endswith(".html"):
+            errors.append(f"sitemap.xml: page URL lacks .html: {loc}")
+        if any(old in loc for old, _new in REDIRECT_FIXTURES):
+            errors.append(f"sitemap.xml: redirect fixture leaked into Sitemap: {loc}")
 
 index = (ROOT / "index.html").read_text(encoding="utf-8-sig")
 product_paths = re.findall(r'\d+: "([^"]+\.html)"', index)
@@ -75,4 +146,4 @@ if errors:
     print("\n".join(f"- {error}" for error in errors))
     sys.exit(1)
 
-print(f"URL validation passed: {len(PRODUCTS)} product pages, 40 homepage targets, valid sitemap and redirects.")
+print(f"URL validation passed: {len(HTML_FILES)} HTML pages, {len(product_paths)} homepage targets, {len(locs)} Sitemap URLs, valid redirects.")

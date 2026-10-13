@@ -2,7 +2,9 @@ from pathlib import Path
 from urllib.parse import urlparse
 import html as html_lib
 import re
+import subprocess
 import sys
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).parent
 BASE = 'https://www.chenmalifting.com/'
@@ -14,7 +16,14 @@ def read(path):
     return path.read_text(encoding='utf-8', errors='replace')
 
 sitemap = read(SITEMAP)
+try:
+    sitemap_root = ET.parse(SITEMAP).getroot()
+except (OSError, ET.ParseError) as exc:
+    errors.append(f'Sitemap XML invalid: {exc}')
+    sitemap_root = None
 locs = [x.strip() for x in re.findall(r'<loc>\s*(.*?)\s*</loc>', sitemap, re.S)]
+if sitemap_root is not None and sitemap_root.tag != '{http://www.sitemaps.org/schemas/sitemap/0.9}urlset':
+    errors.append(f'Unexpected Sitemap root element: {sitemap_root.tag}')
 expected_sitemap_count = len(list(ROOT.glob('*.html'))) + len(list((ROOT / 'products').glob('*.html'))) + len(list((ROOT / 'blog').glob('*.html'))) - 1
 if len(locs) != expected_sitemap_count:
     errors.append(f'Sitemap URL count is {len(locs)}, expected {expected_sitemap_count}')
@@ -72,6 +81,8 @@ for rel in required:
         errors.append(f'Canonical mismatch: {rel} -> {canonical!r}, expected {expected!r}')
     if 'https://chenmalifting.com/' in source:
         errors.append(f'Bare-domain URL remains in: {rel}')
+    if re.search(r'(?<!www\.)https://chenmalifting\.com(?:/|["\'])', source):
+        errors.append(f'Bare-domain URL remains in: {rel}')
 
 for title, pages in titles.items():
     if title and len(pages) > 1:
@@ -80,6 +91,18 @@ for title, pages in titles.items():
 robots = ROOT / 'robots.txt'
 if robots.exists() and 'Sitemap: https://www.chenmalifting.com/sitemap.xml' not in read(robots):
     errors.append('robots.txt Sitemap does not point to the www sitemap')
+
+# Sitemap lastmod must match the latest Git commit date for each existing page.
+for loc, lastmod in re.findall(r'<url>\s*<loc>\s*(.*?)\s*</loc>\s*<lastmod>\s*(.*?)\s*</lastmod>', sitemap, re.S):
+    rel = urlparse(loc).path.lstrip('/') or 'index.html'
+    try:
+        git_date = subprocess.check_output(['git', 'log', '-1', '--format=%cs', '--', rel], cwd=ROOT, text=True).strip()
+    except (OSError, subprocess.CalledProcessError):
+        git_date = ''
+    if git_date and lastmod != git_date:
+        errors.append(f'lastmod mismatch: {rel} -> {lastmod}, Git latest {git_date}')
+    elif not git_date:
+        print(f'lastmod source unavailable; preserving existing value: {rel} -> {lastmod}')
 
 print(f'Sitemap URLs: {len(locs)}')
 print(f'Pages checked: {len(required)}')
