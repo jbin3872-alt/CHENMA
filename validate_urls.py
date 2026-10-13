@@ -109,9 +109,15 @@ for old, _new in REDIRECT_FIXTURES:
 
 redirect_text = (ROOT / "_redirects").read_text(encoding="utf-8-sig") if (ROOT / "_redirects").exists() else ""
 for old, new in REDIRECT_FIXTURES:
-    fixture = rf"^/products/{re.escape(old)} /products/{re.escape(new)} 301$"
-    if not re.search(fixture, redirect_text, re.M):
-        errors.append(f"_redirects: missing redirect fixture /products/{old} -> /products/{new}")
+    target = BASE + "products/" + new
+    fixture = rf"^/products/{re.escape(old)} (?P<target>{re.escape(target)}) 301$"
+    match = re.search(fixture, redirect_text, re.M)
+    if not match:
+        errors.append(f"_redirects: missing redirect fixture /products/{old} -> {target}")
+    elif "/products/" + old == match.group("target"):
+        errors.append(f"_redirects: redirect source equals target for {old}")
+    elif not (ROOT / "products" / new).exists():
+        errors.append(f"_redirects: redirect target file does not exist: products/{new}")
 
 sitemap = ROOT / "sitemap.xml"
 try:
