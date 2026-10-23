@@ -36,7 +36,7 @@ $footer = @'
 <footer class="bg-slate-900 text-white py-12 mt-16">
   <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
     <div>
-      <img src="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg" class="h-10 bg-white p-1 rounded mb-4">
+      <img src="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg" class="h-10 bg-white p-1 rounded mb-4" alt="CHENMA LIFTING logo" loading="lazy">
       <p class="text-slate-400">Xi'an Chen Ma Materials Co.,Ltd. Professional material handling solutions since 2011.</p>
     </div>
     <div>
@@ -69,7 +69,7 @@ foreach ($p in $products) {
     foreach ($r in $related) {
         $rSlug = Get-Slug $r.name
         $rShort = ($r.name -replace ' \([^)]*\)', '').Trim()
-        $relatedHtml += '<a href="' + $rSlug + '.html" class="block p-4 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-md transition"><span class="block text-[10px] font-black uppercase text-blue-600 mb-1">' + $rShort + '</span><img src="' + $r.img + '" class="h-16 object-contain mx-auto" alt="' + $r.name + '"></a>'
+        $relatedHtml += '<a href="' + $rSlug + '.html" class="block p-4 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-md transition"><span class="block text-[10px] font-black uppercase text-blue-600 mb-1">' + $rShort + '</span><img src="' + $r.img + '" class="h-16 object-contain mx-auto" alt="' + $r.name + '" loading="lazy"></a>'
     }
 
     $specRows = ""
@@ -89,6 +89,12 @@ foreach ($p in $products) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>' + $p.name + ' | Chenma Lifting</title>
 <meta name="description" content="' + $desc + '">
+<meta property="og:title" content="' + $p.name + ' | Chenma Lifting">
+<meta property="og:description" content="' + $desc + '">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="' + $p.name + ' | Chenma Lifting">
+<meta name="twitter:description" content="' + $desc + '">
+<meta name="twitter:image" content="' + $p.img + '">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <!-- GEO Optimization: JSON-LD -->

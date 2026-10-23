@@ -23,7 +23,7 @@ $footer = @'
 <footer class="bg-slate-900 text-white py-12 mt-16">
   <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
     <div>
-      <img src="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg" class="h-10 bg-white p-1 rounded mb-4">
+      <img src="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg" class="h-10 bg-white p-1 rounded mb-4" alt="CHENMA LIFTING logo" loading="lazy">
       <p class="text-slate-400">Xi'an Chen Ma Materials Co.,Ltd. Professional material handling solutions since 2011.</p>
     </div>
     <div>
@@ -60,10 +60,10 @@ foreach ($cat in $cats) {
         $cards += '<a href="products/' + $slug + '.html" class="block">
 <div class="card bg-white rounded-2xl shadow hover:shadow-2xl transition cursor-pointer overflow-hidden border border-slate-100 flex flex-col">
   <div class="h-44 p-3 flex items-center justify-center bg-white relative overflow-hidden">
-    <img src="' + $p.img + '" class="max-h-full object-contain" alt="' + $p.name + '" onerror="this.src=''https://via.placeholder.com/300x200?text=CHENMA''">
+    <img src="' + $p.img + '" class="max-h-full object-contain" alt="' + $p.name + '" loading="lazy" onerror="this.src=''https://via.placeholder.com/300x200?text=CHENMA''">
   </div>
   <div class="p-4 flex flex-col flex-grow bg-slate-50">
-    <h4 class="font-bold text-[11px] uppercase text-slate-800 line-clamp-2 mb-2 leading-tight h-9">' + $p.name + '</h4>
+    <h3 class="font-bold text-[11px] uppercase text-slate-800 line-clamp-2 mb-2 leading-tight h-9">' + $p.name + '</h3>
     <div class="mt-auto pt-2 border-t border-slate-200 flex justify-between text-[10px] font-black uppercase">
       <span class="text-blue-600">' + $p.cat + '</span>
       <span class="text-slate-400">ID: ' + $p.id + '</span>
@@ -97,6 +97,12 @@ foreach ($cat in $cats) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>' + $cat.title + ' | Chenma Lifting</title>
 <meta name="description" content="' + $descTrim + '">
+<meta property="og:title" content="' + $cat.title + ' | Chenma Lifting">
+<meta property="og:description" content="' + $descTrim + '">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="' + $cat.title + ' | Chenma Lifting">
+<meta name="twitter:description" content="' + $descTrim + '">
+<meta name="twitter:image" content="https://sc02.alicdn.com/kf/H094d445ef7544ed0b8eea6b6d0d98b9bQ.jpg">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <!-- GEO Optimization: JSON-LD -->
