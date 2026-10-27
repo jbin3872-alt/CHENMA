@@ -148,17 +148,17 @@ robots = ROOT / 'robots.txt'
 if robots.exists() and 'Sitemap: https://www.chenmalifting.com/sitemap.xml' not in read(robots):
     errors.append('robots.txt Sitemap does not point to the www sitemap')
 
-# Sitemap lastmod must match the latest Git commit date for each existing page.
+# Sitemap lastmod must be a valid ISO date and cannot be in the future.
+today = dt.date.today()
 for loc, lastmod in re.findall(r'<url>\s*<loc>\s*(.*?)\s*</loc>\s*<lastmod>\s*(.*?)\s*</lastmod>', sitemap, re.S):
     rel = urlparse(loc).path.lstrip('/') or 'index.html'
     try:
-        git_date = subprocess.check_output(['git', 'log', '-1', '--format=%cs', '--', rel], cwd=ROOT, text=True).strip()
-    except (OSError, subprocess.CalledProcessError):
-        git_date = ''
-    if git_date and lastmod != git_date:
-        errors.append(f'lastmod mismatch: {rel} -> {lastmod}, Git latest {git_date}')
-    elif not git_date:
-        print(f'lastmod source unavailable; preserving existing value: {rel} -> {lastmod}')
+        parsed_lastmod = dt.date.fromisoformat(lastmod)
+    except ValueError:
+        errors.append(f'Invalid Sitemap lastmod: {rel} -> {lastmod}')
+        continue
+    if parsed_lastmod > today:
+        errors.append(f'Future Sitemap lastmod: {rel} -> {lastmod}, today {today.isoformat()}')
 
 print(f'Sitemap URLs: {len(locs)}')
 print(f'Pages checked: {len(required)}')

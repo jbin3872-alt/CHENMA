@@ -14,7 +14,7 @@ TARGETS = [
     ROOT / "products_extracted.json",
     *sorted((ROOT / "products").glob("*.html")),
 ]
-BAD_MARKERS = ("\ufffd", "\u9225", "\u8133", "\u922e", "\u63b3", "\u951f")
+BAD_MARKERS = ("\ufffd", "\u9225", "\u8133", "\u922e", "\u63b3", "\u951f", "路", "鏇", "锟", "�")
 
 errors = []
 for path in TARGETS:

@@ -74,6 +74,8 @@ check_source(PRODUCT_SOURCE, [
     ('related image alt', r'\$r\.name \+ \'" loading="lazy"'),
     ('footer logo alt', r'CHENMA LIFTING logo.*loading="lazy"'),
     ('BreadcrumbList', r'"@type": "BreadcrumbList"'),
+    ('specification description variable', r'\$specDescription\s*=\s*\(\(\$p\.specs\s*\|\s*ForEach-Object'),
+    ('Product Schema uses specification description', r'"description": "\' \+ \$desc \+ \'"'),
 ])
 check_source(PILLAR_SOURCE, [
     ('OG title', r'<meta property="og:title"'),

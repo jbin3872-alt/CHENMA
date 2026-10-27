@@ -77,7 +77,8 @@ foreach ($p in $products) {
         $specRows += '<tr class="border-b border-slate-100"><td class="p-3 text-[10px] text-slate-400 font-bold uppercase tracking-wider">' + $s.k + '</td><td class="p-3 font-black text-slate-800 text-sm">' + $s.v + '</td></tr>'
     }
 
-    $desc = "$($p.name) - CE certified material handling equipment from Chenma Lifting."
+    $specDescription = (($p.specs | ForEach-Object { "$($_.k): $($_.v)" }) -join ', ')
+    $desc = "$($p.name) - $specDescription. CE certified material handling equipment from Chenma Lifting."
     $waText = [uri]::EscapeDataString("Hello, I am interested in: $($p.name). Please send specifications and best price.")
     $waLink = "https://wa.me/8615991627891?text=" + $waText
     $mailSubject = [uri]::EscapeDataString("Inquiry: $($p.name)")
@@ -109,8 +110,6 @@ foreach ($p in $products) {
   "offers": {
     "@type": "Offer",
     "url": "https://www.chenmalifting.com/products/' + $slug + '.html",
-    "priceCurrency": "USD",
-    "price": "1200.00",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition"
   }

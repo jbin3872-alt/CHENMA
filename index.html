@@ -81,13 +81,11 @@ window.addEventListener('DOMContentLoaded', () => {
       "@type": "Product",
       "name": p.name,
       "image": p.img,
-      "description": p.specs.map(s => `: `).join(', '),
+      "description": p.specs.map(s => `${s[0]}: ${s[1]}`).join(', '),
       "brand": { "@type": "Brand", "name": "chenma" },
       "offers": {
         "@type": "Offer",
-        "url": window.location.href,
-        "priceCurrency": "USD",
-        "price": "1200.00", 
+        "url": `https://www.chenmalifting.com/products/${productPath(p.id)}`,
         "availability": "https://schema.org/InStock"
       }
     }));
@@ -222,7 +220,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
             <i class="fas fa-warehouse text-blue-400 group-hover:text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Logistics</h4>
+          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Logistics</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Our electric forklifts and stackers are designed for high-efficiency cargo movement in modern warehouses and narrow-aisle storage.</p>
         </div>
 
@@ -230,7 +228,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
             <i class="fas fa-hammer text-blue-400 group-hover:text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Construction</h4>
+          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Construction</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Heavy-duty stair climbers and gantry lifts transport bricks, cement, and construction materials safely to upper floors.</p>
         </div>
 
@@ -238,7 +236,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
             <i class="fas fa-home text-blue-400 group-hover:text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Home & Retail</h4>
+          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Home & Retail</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Compact and portable climbing tools for moving household appliances, bottled water, and retail inventory effortlessly.</p>
         </div>
 
@@ -246,7 +244,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition">
             <i class="fas fa-hard-hat text-blue-400 group-hover:text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Aerial Work</h4>
+          <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Aerial Work</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Aluminum pillar lifts and scissor platforms provide stable support for high-altitude installation, maintenance, and cleaning.</p>
         </div>
       </div>
@@ -305,7 +303,7 @@ window.addEventListener('DOMContentLoaded', () => {
       <p class="text-slate-400">Xi'an Chen Ma Materials Co.,Ltd. Professional material handling solutions since 2011.</p>
     </div>
     <div>
-      <h3 class="font-black uppercase tracking-widest mb-4">Contact</h4>
+      <h3 class="font-black uppercase tracking-widest mb-4">Contact</h3>
       <p class="text-slate-400 mb-2"><i class="fas fa-envelope text-blue-400 mr-2"></i>chenmagongsi@163.com</p>
       
       <p class="text-slate-400 mb-2"><i class="fas fa-book text-blue-400 mr-2"></i><a href="hydraulic-lifting-table-troubleshooting-repair-guide.html" class="underline">Blog: Hydraulic Table Troubleshooting &amp; Repair</a></p>
@@ -329,7 +327,7 @@ window.addEventListener('DOMContentLoaded', () => {
       <p class="text-slate-400"><i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>Xi'an, Shaanxi, China</p>
     </div>
     <div>
-      <h3 class="font-black uppercase tracking-widest mb-4">Certificates</h4>
+      <h3 class="font-black uppercase tracking-widest mb-4">Certificates</h3>
       <div class="flex space-x-3">
         <span class="px-4 py-2 bg-slate-800 rounded font-black text-blue-400 border border-slate-700">CE</span>
         <span class="px-4 py-2 bg-slate-800 rounded font-black text-blue-400 border border-slate-700">ISO 9001</span>
@@ -609,7 +607,7 @@ function show(cat) {
         </div>
       </div>
       <div class="p-4 flex flex-col flex-grow bg-slate-50">
-        <h3 class="font-bold text-[11px] uppercase text-slate-800 line-clamp-2 mb-2 leading-tight h-9">${p.name}</h4>
+        <h3 class="font-bold text-[11px] uppercase text-slate-800 line-clamp-2 mb-2 leading-tight h-9">${p.name}</h3>
         <div class="mt-auto pt-2 border-t border-slate-200 flex justify-between text-[10px] font-black uppercase">
           <span class="text-blue-600">${p.cat}</span>
           <span class="text-slate-400">${p.specs[0][1]}</span>
