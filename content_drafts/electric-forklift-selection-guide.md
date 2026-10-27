@@ -2,7 +2,7 @@
 title: "Electric Forklift Selection Guide: Capacity, Lift Height and Battery Choices"
 seo_title: "Electric Forklift Selection Guide | Chenma"
 meta_description: "Compare electric forklift capacity, lift height, operating format, battery and motor choices using verified Chenma FE and SE models."
-canonical: "https://chenmalifting.com/electric-forklift-selection-guide.html"
+canonical: "https://www.chenmalifting.com/electric-forklift-selection-guide.html"
 primary_keyword: "electric forklift selection guide"
 secondary_keywords:
   - "electric forklift capacity"
@@ -39,7 +39,7 @@ The matrix uses selected full-electric (FE) and semi-electric (SE) records, not 
 
 Other confirmed examples include CMAE-F04 at 500 kg / 2 m, CMAE-S13 at 1000 kg / 1.6 m, F02-1 at 3 m, CMSE-S02 at 1000 kg / 1.6 m, CMSE-S05 at 500 kg / 1.7 m, and CMSE-S06 at 1000 kg / 1.3 m. These values apply only to the stated records.
 
-Browse the [full-electric forklift category](https://chenmalifting.com/electric-forklifts.html) and the [semi-electric forklift category](https://chenmalifting.com/semi-electric-forklifts.html) before asking for a quote. For the multi-configuration SE example, review the [CMSE-S08 universal stacker page](https://chenmalifting.com/products/cmse-s08-universal-stacker-1-ton-up-to-35m.html).
+Browse the [full-electric forklift category](https://www.chenmalifting.com/electric-forklifts.html) and the [semi-electric forklift category](https://www.chenmalifting.com/semi-electric-forklifts.html) before asking for a quote. For the multi-configuration SE example, review the [CMSE-S08 universal stacker page](https://www.chenmalifting.com/products/cmse-s08-universal-stacker-1-ton-up-to-35m.html).
 
 ## 2. Capacity: compare the rated field, not a marketing label
 
@@ -51,7 +51,7 @@ Lift height should be read from the exact product field. F02-1, F02-2 and F04 ex
 
 Ask where the load must be placed, what clearance exists, and whether the quoted configuration supports that height. Include storage height, load dimensions and machine dimensions in the RFQ. The records do not provide a universal residual-capacity curve; do not infer one from maximum lift.
 
-For a model-specific starting point, review the [CMAE-F07 2000 kg / 3 m page](https://chenmalifting.com/products/cmae-f07-heavy-duty-2000kg-3m.html) and the [CMAE-F06 500 kg / 2.1 m page](https://chenmalifting.com/products/cmae-f06-precision-forklift-500kg-21m.html).
+For a model-specific starting point, review the [CMAE-F07 2000 kg / 3 m page](https://www.chenmalifting.com/products/cmae-f07-heavy-duty-2000kg-3m.html) and the [CMAE-F06 500 kg / 2.1 m page](https://www.chenmalifting.com/products/cmae-f06-precision-forklift-500kg-21m.html).
 
 ## 4. Full-electric versus semi-electric operation
 
@@ -63,7 +63,7 @@ Choose a full-electric example when the specific record matches the required loa
 
 Treat the battery field as a configuration checkpoint. FE examples use 48V lead-acid records: F02-1 52AH, F02-2 45AH, F04/F06 32A and F07 32A. S13, S01 and S02 list 48V / 15AH lithium; S03 lists 12V lead-acid DC, S05 24V / 20A lead-acid, S06 48V / 15A lead-acid, and S08 DC 12V without chemistry. Motor fields are also model-specific: F06 lists 2000 W drive / 2500 W hoist, F07 5000 W / 4000 W, and F02-1/F02-2 1500 W / 1200 W. Do not turn power into an unverified load, duty-cycle or battery-life claim; request confirmation for the selected configuration.
 
-For chemistry background only, see the existing [lithium vs lead-acid battery guide](https://chenmalifting.com/lithium-vs-lead-acid-battery.html), then return to the exact battery field on the product page.
+For chemistry background only, see the existing [lithium vs lead-acid battery guide](https://www.chenmalifting.com/lithium-vs-lead-acid-battery.html), then return to the exact battery field on the product page.
 
 ## 6. Dimensions, forks and site fit
 
@@ -112,7 +112,7 @@ List the missing parameter in the RFQ and ask the engineering team to confirm it
 
 ## CTA: request a model-specific forklift shortlist
 
-If you know the load, lift height, operating position, available power and site dimensions, send those facts with the RFQ checklist above. Review the [electric forklift category](https://chenmalifting.com/electric-forklifts.html), [semi-electric forklift category](https://chenmalifting.com/semi-electric-forklifts.html), and the linked model pages before contacting CHENMA LIFTING for a configuration-specific comparison.
+If you know the load, lift height, operating position, available power and site dimensions, send those facts with the RFQ checklist above. Review the [electric forklift category](https://www.chenmalifting.com/electric-forklifts.html), [semi-electric forklift category](https://www.chenmalifting.com/semi-electric-forklifts.html), and the linked model pages before contacting CHENMA LIFTING for a configuration-specific comparison.
 
 ---
 
@@ -120,7 +120,7 @@ If you know the load, lift height, operating position, available power and site 
 
 - **SEO title:** Electric Forklift Selection Guide | Chenma
 - **Meta description:** Compare electric forklift capacity, lift height, operating format, battery and motor choices using verified Chenma FE and SE models.
-- **Canonical:** https://chenmalifting.com/electric-forklift-selection-guide.html
+- **Canonical:** https://www.chenmalifting.com/electric-forklift-selection-guide.html
 - **Primary keyword:** electric forklift selection guide
 - **Secondary keywords:** electric forklift capacity; forklift lift height; full-electric vs semi-electric forklift; electric forklift battery choice; forklift RFQ checklist
 
@@ -133,8 +133,8 @@ If you know the load, lift height, operating position, available power and site 
   "headline": "Electric Forklift Selection Guide: Capacity, Lift Height and Battery Choices",
   "description": "Compare electric forklift capacity, lift height, operating format, battery and motor choices using verified Chenma FE and SE models.",
   "author": {"@type": "Organization", "name": "CHENMA LIFTING"},
-  "publisher": {"@type": "Organization", "name": "Xi'an Chenma Materials Co., Ltd.", "url": "https://chenmalifting.com/"},
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://chenmalifting.com/electric-forklift-selection-guide.html"}
+  "publisher": {"@type": "Organization", "name": "Xi'an Chenma Materials Co., Ltd.", "url": "https://www.chenmalifting.com/"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.chenmalifting.com/electric-forklift-selection-guide.html"}
 }
 ```
 
@@ -162,9 +162,9 @@ If you know the load, lift height, operating position, available power and site 
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://chenmalifting.com/"},
-    {"@type":"ListItem","position":2,"name":"Electric Forklifts","item":"https://chenmalifting.com/electric-forklifts.html"},
-    {"@type":"ListItem","position":3,"name":"Electric Forklift Selection Guide","item":"https://chenmalifting.com/electric-forklift-selection-guide.html"}
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.chenmalifting.com/"},
+    {"@type":"ListItem","position":2,"name":"Electric Forklifts","item":"https://www.chenmalifting.com/electric-forklifts.html"},
+    {"@type":"ListItem","position":3,"name":"Electric Forklift Selection Guide","item":"https://www.chenmalifting.com/electric-forklift-selection-guide.html"}
   ]
 }
 ```
@@ -177,6 +177,6 @@ If you know the load, lift height, operating position, available power and site 
   "@type": "Organization",
   "name": "Xi'an Chenma Materials Co., Ltd.",
   "alternateName": "CHENMA LIFTING",
-  "url": "https://chenmalifting.com/"
+  "url": "https://www.chenmalifting.com/"
 }
 ```
