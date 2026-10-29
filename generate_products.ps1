@@ -88,6 +88,7 @@ foreach ($p in $products) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.chenmalifting.com/products/' + $slug + '.html">
 <title>' + $p.name + ' | Chenma Lifting</title>
 <meta name="description" content="' + $desc + '">
 <meta property="og:title" content="' + $p.name + ' | Chenma Lifting">

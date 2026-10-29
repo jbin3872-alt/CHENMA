@@ -95,6 +95,7 @@ foreach ($cat in $cats) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.chenmalifting.com/' + $cat.file + '">
 <title>' + $cat.title + ' | Chenma Lifting</title>
 <meta name="description" content="' + $descTrim + '">
 <meta property="og:title" content="' + $cat.title + ' | Chenma Lifting">
